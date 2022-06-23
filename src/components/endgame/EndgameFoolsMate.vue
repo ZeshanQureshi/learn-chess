@@ -1,4 +1,5 @@
 <template>
+<div>
   <div class="endgame-header">
     <h3>Fool's Mate</h3>
   </div>
@@ -8,6 +9,7 @@
     </div>
     <p>The fool's mate, also known as the two-move checkmate, occurs in chess when the opponent is checked after making the fewest number of moves from the opening position. Only Black is capable of achieving it, resulting in checkmate with the queen on the second move. The fool's mate got its moniker because it can only happen if White makes a particularly grave error. This checkmate rarely happens in practice, not even among rank novices.</p>
   </div>
+</div>
 </template>
 
 <script>

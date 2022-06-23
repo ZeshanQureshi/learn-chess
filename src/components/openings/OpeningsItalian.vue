@@ -1,4 +1,5 @@
 <template>
+<div>
   <div class="openings-header">
     <h3>Italian Game</h3>
   </div>
@@ -19,6 +20,7 @@
       <li>Less pressure on Black center.</li>
     </ul>
   </div>
+</div>
 </template>
 
 <script>

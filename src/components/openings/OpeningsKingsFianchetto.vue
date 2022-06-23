@@ -1,4 +1,5 @@
 <template>
+<div>
   <div class="openings-header">
     <h3>King's Fianchetto</h3>
   </div>
@@ -19,6 +20,7 @@
       <li>Black can use pawns to block bishop.</li>
     </ul>
   </div>
+</div>
 </template>
 
 <script>

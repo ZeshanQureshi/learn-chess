@@ -1,4 +1,5 @@
 <template>
+<div>
   <div class="openings-header">
     <h3>Openings</h3>
     <p v-if="!isLoggedIn">
@@ -56,6 +57,7 @@
       </div>
     </router-link>
   </div>
+</div>
 </template>
 
 <script>

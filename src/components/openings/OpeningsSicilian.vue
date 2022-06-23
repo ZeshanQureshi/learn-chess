@@ -1,4 +1,5 @@
 <template>
+<div>
   <div class="openings-header">
     <h3>Sicilian Defence</h3>
   </div>
@@ -20,6 +21,7 @@
       <li>White gets a strong center.</li>
     </ul>
   </div>
+</div>
 </template>
 
 <script>

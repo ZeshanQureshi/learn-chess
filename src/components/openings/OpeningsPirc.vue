@@ -1,4 +1,5 @@
 <template>
+<div>
   <div class="openings-header">
     <h3>Pirc Defence</h3>
   </div>
@@ -20,6 +21,7 @@
       <li>White can also play cautiously to limit Black's options.</li>
     </ul>
   </div>
+</div>
 </template>
 
 <script>

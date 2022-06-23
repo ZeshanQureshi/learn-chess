@@ -1,4 +1,5 @@
 <template>
+<div>
   <div class="endgame-header">
     <h3>Back Rank Mate</h3>
   </div>
@@ -8,6 +9,7 @@
     </div>
     <p>When a king is boxed in by its own pieces (often pawns) on the first or eighth rank, a rook or queen checkmates the king. This is known as a back-rank mate.</p>
   </div>
+</div>
 </template>
 
 <script>

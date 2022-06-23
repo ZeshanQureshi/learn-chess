@@ -1,4 +1,5 @@
 <template>
+<div>
   <div class="endgame-header">
     <h3>Legal's Mate</h3>
   </div>
@@ -8,6 +9,7 @@
     </div>
     <p>If Black accepts the sacrifice, the Légal Trap is a chess opening trap characterised by a queen sacrifice followed by checkmate with small pieces. Two knights and a bishop are used to attack the Black King due to an underdeveloped Black center.</p>
   </div>
+</div>
 </template>
 
 <script>

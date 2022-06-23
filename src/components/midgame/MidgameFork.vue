@@ -1,4 +1,5 @@
 <template>
+<div>
   <div class="midgame-header">
     <h3>Fork</h3>
   </div>
@@ -8,6 +9,7 @@
     </div>
     <p>A fork is a chess strategy in which a piece threatens two or more pieces at the same time. Typically, the attacker attempts to capture one of the forked pieces or threatens checkmate. Countering two or more threats in a single move is often tough for the defence.</p>
   </div>
+</div>
 </template>
 
 <script>

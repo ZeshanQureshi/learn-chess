@@ -1,4 +1,5 @@
 <template>
+<div>
   <div class="openings-header">
     <h3>Ruy Lopez</h3>
   </div>
@@ -19,6 +20,7 @@
       <li>Black has a wide range of defences from which to pick.</li>
     </ul>
   </div>
+</div>
 </template>
 
 <script>

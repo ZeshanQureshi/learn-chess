@@ -1,4 +1,5 @@
 <template>
+<div>
   <div class="not-found-container">
     <div class="not-found-center">
       <p>
@@ -8,6 +9,7 @@
       </p>
     </div>
   </div>
+</div>
 </template>
 
 <script>

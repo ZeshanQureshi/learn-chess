@@ -1,4 +1,5 @@
 <template>
+<div>
   <div class="midgame-header">
     <h3>Hanging Piece</h3>
   </div>
@@ -8,6 +9,7 @@
     </div>
     <p>A hanging item is one that is undefended and vulnerable to capture. In other terms, a dangling item is vulnerable to attack since it is undefended or "loose." The term "en prise" refers to a piece that can be captured (a synonym for being exposed to capture).</p>
   </div>
+</div>
 </template>
 
 <script>

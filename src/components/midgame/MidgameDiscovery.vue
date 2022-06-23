@@ -1,4 +1,5 @@
 <template>
+<div>
   <div class="midgame-header">
     <h3>Discovery</h3>
   </div>
@@ -8,6 +9,7 @@
     </div>
     <p>Because it catches your opponent off surprise, the discovery check can be a crushing approach. Furthermore, it forces the opponent player to reply to the check, allowing you enough time to inflict significant damage.</p>
   </div>
+</div>
 </template>
 
 <script>

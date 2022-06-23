@@ -1,4 +1,5 @@
 <template>
+<div>
   <div class="openings-header">
     <h3>Caro Kann Defence</h3>
   </div>
@@ -19,6 +20,7 @@
       <li>Black gets trapped light bishop.</li>
     </ul>
   </div>
+</div>
 </template>
 
 <script>

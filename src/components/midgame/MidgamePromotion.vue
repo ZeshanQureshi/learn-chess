@@ -1,4 +1,5 @@
 <template>
+<div>
   <div class="midgame-header">
     <h3>Promotion</h3>
   </div>
@@ -8,6 +9,7 @@
     </div>
     <p>Promotion in chess refers to the exchange of a pawn for a new queen, rook, bishop, or knight of the same colour. It happens as soon as the pawn reaches the last rank, with the player selecting the promotion piece. The new piece does not have to be one that has already been caught. The pawn must be promoted; it cannot remain a pawn.</p>
   </div>
+</div>
 </template>
 
 <script>

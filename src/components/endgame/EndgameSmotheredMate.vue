@@ -1,4 +1,5 @@
 <template>
+<div>
   <div class="endgame-header">
     <h3>Smothered Mate</h3>
   </div>
@@ -8,6 +9,7 @@
     </div>
     <p>In chess, a smothered mate is a checkmate in which the mated king is entirely surrounded (or smothered) by its own pieces, preventing it from moving.</p>
   </div>
+</div>
 </template>
 
 <script>

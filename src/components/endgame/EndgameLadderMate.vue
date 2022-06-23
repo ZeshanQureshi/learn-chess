@@ -1,4 +1,5 @@
 <template>
+<div>
   <div class="endgame-header">
     <h3>Ladder Mate</h3>
   </div>
@@ -8,6 +9,7 @@
     </div>
     <p>Two significant pieces, such as two queens, two rooks, or one rook and one queen, cooperate to move the opposing king to one side of the board in the ladder mate.</p>
   </div>
+</div>
 </template>
 
 <script>

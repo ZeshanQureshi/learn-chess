@@ -1,4 +1,5 @@
 <template>
+<div>
   <div class="openings-header">
     <h3>Queen's Gambit</h3>
   </div>
@@ -19,6 +20,7 @@
       <li>Reduced pressure on Black king's side.</li>
     </ul>
   </div>
+</div>
 </template>
 
 <script>

@@ -1,4 +1,5 @@
 <template>
+<div>
   <div class="endgame-header">
     <h3>Scholar's Mate</h3>
   </div>
@@ -8,6 +9,7 @@
     </div>
     <p>One of the most well-known checkmating patterns among chess players is the Scholar's Mate. It takes only four moves to win the game by targeting the vulnerable f-pawn with a bishop and a queen. Because the f7-pawn is entirely guarded by the king, it is a popular target in many opening traps.</p>
   </div>
+</div>
 </template>
 
 <script>

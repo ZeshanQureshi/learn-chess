@@ -1,4 +1,5 @@
 <template>
+<div>
   <div class="midgame-header">
     <h3>Skewer</h3>
   </div>
@@ -8,6 +9,7 @@
     </div>
     <p>A skewer, comparable to a pin in chess, is an attack on two pieces in a line. The distinction between a skewer and a "reverse pin" is that in a skewer, the more precious piece is the one that is directly attacked. To avoid losing material, the opponent is forced to move the more precious piece, exposing the less valuable piece, which can then be captured.</p>
   </div>
+</div>
 </template>
 
 <script>

@@ -1,4 +1,5 @@
 <template>
+<div>
   <div class="endgame-header">
     <h3>Anastasia's Mate</h3>
   </div>
@@ -8,6 +9,7 @@
     </div>
     <p>A knight and rook work together in Anastasia's mate to trap the adversary king between the side of the board on one side and a friendly piece on the other. To get to the position, the queen is frequently initially sacrifaced along the a-file or h-file.</p>
   </div>
+</div>
 </template>
 
 <script>

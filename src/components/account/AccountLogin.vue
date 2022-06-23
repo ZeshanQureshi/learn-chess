@@ -1,4 +1,5 @@
 <template>
+<div>
     <div class="account-center">
       <div class="account-content">
         <p>Don't have an account? 
@@ -19,6 +20,7 @@
         <p class="account-status" v-if="isLoading"><b>Authenticating...</b></p>
       </div>
     </div>
+</div>
 </template>
 
 <script>

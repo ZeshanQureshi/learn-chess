@@ -1,5 +1,7 @@
 <template>
+<div>
   <p>Coming Soon!</p>
+</div>
 </template>
 
 <script>

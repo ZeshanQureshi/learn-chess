@@ -1,4 +1,5 @@
 <template>
+<div>
   <div class="midgame-header">
     <h3>Midgame</h3>
     <p v-if="!isLoggedIn">
@@ -56,6 +57,7 @@
       </div>
     </router-link> 
   </div>
+</div>
 </template>
 
 <script>

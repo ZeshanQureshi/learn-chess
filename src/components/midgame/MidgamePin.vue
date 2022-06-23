@@ -1,4 +1,5 @@
 <template>
+<div>
   <div class="midgame-header">
     <h3>Pin</h3>
   </div>
@@ -8,6 +9,7 @@
     </div>
     <p>A pin is a strategy that you can use to keep one or more of your opponent's pieces from moving. You can achieve it by attacking the other player's forces in such a way that if the assaulted piece moves, you can explore a much larger vulnerability. The pinned piece usually prevents an attack on a more valued piece, but it can also safeguard a critical defender or even obstruct a checkmate.</p>
   </div>
+</div>
 </template>
 
 <script>

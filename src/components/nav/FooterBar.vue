@@ -1,4 +1,5 @@
 <template>
+<div>
   <footer>
     <div class="footer-center">
       <hr>
@@ -57,6 +58,7 @@
         </div>
     </div>
   </footer>
+</div>
 </template>
 
 <script>

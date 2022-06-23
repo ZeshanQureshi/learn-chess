@@ -1,4 +1,5 @@
 <template>
+<div>
     <div class="account-center">
       <div class="account-content">
         <p>Return to
@@ -11,6 +12,7 @@
         <button>Reset Password</button>
       </div>
     </div>
+</div>
 </template>
 
 <script>

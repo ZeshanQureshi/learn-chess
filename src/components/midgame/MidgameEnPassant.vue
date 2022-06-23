@@ -1,4 +1,5 @@
 <template>
+<div>
   <div class="midgame-header">
     <h3>En Passant</h3>
   </div>
@@ -8,6 +9,7 @@
     </div>
     <p>In chess, the en passant capture is a move. A pawn that has recently advanced two squares in one move can be captured by an enemy piece that is horizontally adjacent. As though the advancing pawn had only moved one square, the capturing pawn moves to the square that the advancing pawn passed over. This type of capture is only allowed on the turn after the two-square advance; it cannot be done on a subsequent turn.</p>
   </div>
+</div>
 </template>
 
 <script>

@@ -1,4 +1,5 @@
 <template>
+<div>
   <div class="account-center">
     <div class="account-header"></div>
       <div class="account-content">
@@ -28,6 +29,7 @@
         <p class="account-status" v-if="isLoadingPassword"><b>Authenticating...</b></p>
       </div>
     </div>
+</div>
 </template>
 
 <script>

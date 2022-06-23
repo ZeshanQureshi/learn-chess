@@ -1,4 +1,5 @@
 <template>
+<div>
   <div class="endgame-header">
     <h3>Arabian Mate</h3>
   </div>
@@ -8,6 +9,7 @@
     </div>
     <p>The opposing king is trapped on a corner of the board in the Arabian Mate by the knight and the rook working together. The knight is positioned two squares diagonally from the king to prevent escape on the square next to the king and to defend the rook. The rook is positioned on a square near to the king to deliver checkmate and to prevent escape along the diagonal.</p>
   </div>
+</div>
 </template>
 
 <script>

@@ -1,4 +1,5 @@
 <template>
+<div>
   <div class="block-one">
     <div class="center-one" >
       <div class="text-one">
@@ -60,6 +61,7 @@
       <button>Sign up for Learn Chess</button>
     </div>
   </div>
+</div>
 </template>
 
 <script>

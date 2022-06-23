@@ -1,4 +1,5 @@
 <template>
+<div>
   <div class="midgame-header">
     <h3>Perpetual Checks</h3>
   </div>
@@ -8,6 +9,7 @@
     </div>
     <p>Perpetual check is a situation in chess where one player can force a draw by making an endless series of checks. When a player who is checking is unable to deliver checkmate, neglecting to continue the series of checks allows the opponent at least an opportunity to win, this occurs.</p>
   </div>
+</div>
 </template>
 
 <script>

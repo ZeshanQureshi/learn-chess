@@ -1,4 +1,5 @@
 <template>
+<div>
   <div class="openings-header">
     <h3>French Defence</h3>
   </div>
@@ -19,6 +20,7 @@
       <li>Low attacking presence.</li>
     </ul>
   </div>
+</div>
 </template>
 
 <script>

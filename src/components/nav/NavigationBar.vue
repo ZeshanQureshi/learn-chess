@@ -1,4 +1,5 @@
 <template>
+<div>
   <header class="top-bar">
     <nav v-if="windowWidth >= 1000" class="desktop">
       <ul>
@@ -28,6 +29,7 @@
       </div>
     </nav>
   </header>
+</div>
 </template>
 
 <script>
