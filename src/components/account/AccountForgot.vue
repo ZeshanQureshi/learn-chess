@@ -6,10 +6,15 @@
           <router-link class="account-router" to="/account/sign-in">Sign In</router-link>
         </p>
         <h4>Forgot Password</h4>
-        <label>
-          <input placeholder="Email" type="email" class="account-information"/>
-        </label>
-        <button>Reset Password</button>
+        <form @keyup.enter="submitForgotPassword">
+          <label>
+            <input v-model="accountForgotEmail" placeholder="Email" type="email" class="account-information"/>
+          </label>
+        </form>
+        <button @click="submitForgotPassword">Reset Password</button>
+        <p class="account-status">{{ accountForgotEmailStatus }}</p>
+        <p v-if="accountLinkToLogin" class="account-status">Return to <router-link to="/account/sign-in">Sign In</router-link></p>
+        <p class="account-status" v-if="isLoading"><b>Authenticating...</b></p>
       </div>
     </div>
 </div>
@@ -18,7 +23,43 @@
 <script>
 export default {
   name: 'AccountForgot',
-  
+  data() {
+    return {
+      accountForgotEmail: '',
+      accountForgotEmailStatus: '',
+      accountLinkToLogin: false,
+      isLoading: false
+    }
+  },
+  methods: {
+    async submitForgotPassword() {
+      if (this.accountForgotEmail == '') {
+        this.accountForgotEmailStatus = 'Please enter a valid email.';
+        return
+      }
+      
+      this.accountForgotEmailStatus = '';
+
+      this.isLoading = true;
+
+      console.log(this.accountForgotEmail);
+
+      try {
+        await this.$store.dispatch('forgotPassword', {
+          email: this.accountForgotEmail,
+        });
+          this.accountForgotEmailStatus = "Reset Password Successful! Please check your email.";
+          this.accountLinkToLogin = true;
+        
+
+      } catch(err) {
+        this.error = err.message || "Failed to reset password, try later.";
+        this.accountForgotEmailStatus = err.message;
+      }
+      
+      this.isLoading = false;
+    }
+  }
 }
 </script>
 
@@ -46,6 +87,10 @@ export default {
   font-size: 20px;
   height: 40px;
   padding: 5px;
+}
+
+.account-status {
+  padding-top: 10px;
 }
 
 p {

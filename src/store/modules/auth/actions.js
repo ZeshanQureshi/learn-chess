@@ -181,5 +181,24 @@ export default {
   autoLogout(context) {
     context.dispatch('logout');
     context.commit('setAutoLogout');
+  },
+
+  async forgotPassword(context, payload) {
+    const response = await fetch('https://identitytoolkit.googleapis.com/v1/accounts:sendOobCode?key=', {
+      method: 'POST',
+      body: JSON.stringify({
+        requestType: "PASSWORD_RESET",
+        email: payload.email
+      })
+    });
+
+    const responseData = await response.json();
+    
+    if (!response.ok) {
+      console.log(responseData);
+      const error = new Error(responseData.message || 'Failed to reset password.');
+      throw error;
+    }
+
   }
 };
