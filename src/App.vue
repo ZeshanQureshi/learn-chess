@@ -1,0 +1,66 @@
+<template>
+  <navigation-bar></navigation-bar>
+  <router-view></router-view>
+  <footer-bar></footer-bar>
+</template>
+
+<script>
+import NavigationBar from './components/nav/NavigationBar.vue'
+import FooterBar from './components/nav/FooterBar.vue'
+
+export default {
+  name: 'App',
+  components: {
+    NavigationBar,
+    FooterBar
+  },
+  computed: {
+    didAutoLogout() {
+      return this.$store.getters.didAutoLogout;
+    }
+  },  
+  created() {
+    this.$store.dispatch('tryLogin');
+  },
+  watch: {
+    didAutoLogout(curValue, oldValue) {
+      if (curValue && curValue != oldValue) {
+        this.$router.replace('/account/sign-in');
+      }
+    }
+  }
+}
+</script>
+
+<style>
+* {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  outline: 0;
+  font-size: 100%;
+  vertical-align: baseline;
+  background: transparent;
+  font-family: 'Open Sans', sans-serif;
+}
+
+::-webkit-scrollbar {
+  width: 15px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background-color: rgb(215, 215, 215);
+}
+ 
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: gray;
+  border-radius: 25px; 
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #555; 
+}
+</style>
