@@ -3,7 +3,12 @@
   <header class="top-bar">
     <nav v-if="windowWidth >= 1000" class="desktop">
       <ul>
-        <router-link class="router-nav" to="/"><li class="logo">Learn Chess</li></router-link>
+        <router-link class="router-nav" to="/">
+          <div class="nav-logo">
+            <img class="icon" v-bind:src="'/nav/nav-icon.png'">
+            <li class="logo">Learn Chess</li>
+          </div>
+        </router-link>
         <router-link class="router-nav" to="/openings"><li>Openings</li></router-link>
         <router-link class="router-nav" to="/midgame"><li>Midgame</li></router-link>
         <router-link class="router-nav" to="/endgame"><li>Endgame</li></router-link>
@@ -11,10 +16,18 @@
         <router-link v-if="!isLoggedIn" class="router-nav" to="/account/sign-in"><li>Sign In</li></router-link>
         <router-link v-else class="router-nav" to="/account/manage"><li>Manage Account</li></router-link>
       </ul>
+    <div>
+
+    </div>  
     </nav>
     <nav v-else class="mobile">
       <div class="navbar">
-        <router-link class="router-nav" to="/"><p class="logo">Learn Chess</p></router-link>
+        <router-link class="router-nav" to="/">
+          <div class="nav-logo">
+            <img class="icon" v-bind:src="'/nav/nav-icon.png'">
+            <li class="logo">Learn Chess</li>
+          </div>
+        </router-link>
         <div @click="toggle" class="dropdown">
           <button >{{ dropDownText }}</button>
           <div v-if="active" class="dropdown-content">
@@ -120,6 +133,16 @@ nav li:hover{
   font-size: 30px;
 }
 
+.icon {
+  height:20px;
+  padding-right: 5px;
+}
+
+.nav-logo:hover {
+  color: white;
+  cursor: pointer;
+}
+
 @media only screen and (max-width: 1000px) {
   .desktop {
     display: none;
@@ -172,12 +195,14 @@ nav li:hover{
   .dropdown-content a {
     float: none;
     color: lightgray;
-    padding: 12px;
+    padding: 5px;
     text-decoration: none;
     display: block;
     text-align: center;
   }
 
-
+  .icon {
+    padding: 16px 3px 0px 0px;
+  }
 }
 </style>

@@ -43,6 +43,8 @@ export default {
 </script>
 
 <style>
+@import url('https://fonts.googleapis.com/css2?family=Anek+Latin&display=swap');
+
 * {
   margin: 0;
   padding: 0;
@@ -51,7 +53,7 @@ export default {
   font-size: 100%;
   vertical-align: baseline;
   background: transparent;
-  font-family: 'Open Sans', sans-serif;
+  font-family: 'Anek Latin', sans-serif;
 }
 
 ::-webkit-scrollbar {
