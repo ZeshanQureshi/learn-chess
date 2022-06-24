@@ -51,14 +51,29 @@
   </div>
   <div class="block-three">
     <div class="block-three-center">
-      <h3>Get Started Now</h3>
-      <ul>
-        <li>Get access to all lessons</li>
-        <li>Save progress in modules</li>
-        <li>Access information on orders</li>
-      </ul>
-      <input type="text" name="email_address_homepage_registration" placeholder="Email address"/>
-      <button>Sign up for Learn Chess</button>
+      <h4>How it Works</h4>
+
+      <div class="block-three-slideshow">
+        <div v-if="displayBlock3Img==1" class="block-three-img">
+          <h5>1. Sign Up for a Free Account</h5>
+        </div>
+
+        <div v-if="displayBlock3Img==2" class="block-three-img">
+          <h5>2. Learn from each Lesson</h5>
+        </div>
+
+        <div v-if="displayBlock3Img==3" class="block-three-img">
+          <h5>3. Apply what you Learned</h5>
+        </div>
+      </div>
+
+      <div class="block-three-buttons">
+        <div class="block-three-buttons-span">
+          <button @click="changeBlock3Img(1)" class="block-three-slideshow-button">1</button>
+          <button @click="changeBlock3Img(2)" class="block-three-slideshow-button">2</button>
+          <button @click="changeBlock3Img(3)" class="block-three-slideshow-button">3</button>
+        </div>
+      </div>
     </div>
   </div>
 </div>
@@ -67,7 +82,17 @@
 <script>
 export default {
   name: 'HomePage',
+  data() {
+    return {
+      displayBlock3Img: 1,
+    }
+  },
 
+  methods: {
+    changeBlock3Img(num) {
+      this.displayBlock3Img = num;
+    }
+  }
 }
 </script>
 
@@ -88,6 +113,18 @@ h3 {
   text-align: center;
 }
 
+h4 {
+  line-height: 50px;
+  font-size: 30px;
+
+  text-align: center;
+}
+
+h5 {
+  font-size: 20px;
+  line-height: 40px;
+}
+
 ul {
   text-align: center;
   list-style-type: none;
@@ -105,23 +142,6 @@ input {
   display: block;
   margin : 0 auto;
   margin-bottom: 30px;
-}
-
-button {
-  display: block;
-  margin : 0 auto;
-  color: white;
-
-  border: 1px black solid;
-  border-radius: 3px;
-  background-color: #2ea44f;
-  padding: 5px;
-
-  cursor: pointer;
-}
-
-button:hover {
-  background-color:green;
 }
 
 .block-one {
@@ -222,9 +242,9 @@ button:hover {
 }
 
 .block-three {
-  background-color: rgb(7,22,48);
+  background-color: white;
   color: black;
-  height: 500px;
+  height: 600px;
   width: 100%;
   box-sizing: border-box;
   padding: 50px 180px 50px 180px;
@@ -235,12 +255,50 @@ button:hover {
   height: 100%;
   margin: 0 auto;
 
-  background-color: lightgray;
+  background-color: white;
   border-radius: 5px;
 
   box-sizing: border-box;
   padding: 20px;
 }
+
+.block-three-slideshow {
+  height: 400px;
+  width: 100%;
+  border: 1px black solid;
+}
+
+ .block-three-img {
+  height: 100%;
+  width: 100%;
+
+  text-align: center;
+ }
+
+.block-three-buttons-span {
+  width: 100%;
+  display:flex;
+  justify-content: space-around;
+  padding-top: 10px;
+}
+
+.block-three-buttons {
+  width: 100%;
+  height: 100px;
+}
+
+ .block-three-slideshow-button {
+  height: 30px;
+  width: 30px;
+
+  border-radius: 30px;
+
+  background-color: darkgray;
+ }
+
+ .block-three-slideshow-button:hover {
+  background-color: lightgray;
+ }
  
 @media only screen and (max-width: 1000px) {
   h1 {
@@ -294,21 +352,6 @@ button:hover {
     max-width: 400px;
   }
 
-  .block-three {
-    padding: 20px;
-    height: 400px;
-  }
-
-  .block-three-center {
-    padding: 0;
-    width: 80%;
-    max-width: 300px;
-  }
-
-  input {
-    min-width: none;
-    width: 50%;
-  }
 }
 
 </style>
