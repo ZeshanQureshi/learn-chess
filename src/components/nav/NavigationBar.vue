@@ -1,46 +1,40 @@
 <template>
 <div>
   <header class="top-bar">
-    <nav v-if="windowWidth >= 1000" class="desktop">
-      <ul>
+      <div class="nav-logo">
         <router-link class="router-nav" to="/">
-          <div class="nav-logo">
             <img class="icon" v-bind:src="'/nav/nav-icon.png'">
-            <li class="logo">Learn Chess</li>
-          </div>
+            <p class="logo">Learn Chess</p>
         </router-link>
-        <router-link class="router-nav" to="/openings"><li>Openings</li></router-link>
-        <router-link class="router-nav" to="/midgame"><li>Midgame</li></router-link>
-        <router-link class="router-nav" to="/endgame"><li>Endgame</li></router-link>
-        <router-link class="router-nav" to="/shop"><li>Shop</li></router-link>
-        <router-link v-if="!isLoggedIn" class="router-nav" to="/account/sign-in"><li>Sign In</li></router-link>
-        <router-link v-else class="router-nav" to="/account/manage"><li>Manage Account</li></router-link>
-      </ul>
-    <div>
+      </div>
 
-    </div>  
-    </nav>
-    <nav v-else class="mobile">
-      <div class="navbar">
-        <router-link class="router-nav" to="/">
-          <div class="nav-logo">
-            <img class="icon" v-bind:src="'/nav/nav-icon.png'">
-            <li class="logo">Learn Chess</li>
-          </div>
-        </router-link>
-        <div @click="toggle" class="dropdown">
-          <button >{{ dropDownText }}</button>
-          <div v-if="active" class="dropdown-content">
-            <router-link class="router-nav" to="/openings"><a>Openings</a></router-link>
-            <router-link class="router-nav" to="/midgame"><a>Midgame</a></router-link>
-            <router-link class="router-nav" to="/endgame"><a>Endgame</a></router-link>
-            <router-link class="router-nav" to="/shop"><a>Shop</a></router-link>
-            <router-link v-if="!isLoggedIn" class="router-nav" to="/account/sign-in"><a>Sign In</a></router-link>
-            <router-link v-else class="router-nav" to="/account/manage"><a>Manage Account</a></router-link>
-          </div>
+      <div class="nav-content">
+        <ul v-if="windowWidth > 1000">
+          <router-link class="router-nav" to="/openings"><li>Openings</li></router-link>
+          <router-link class="router-nav" to="/midgame"><li>Midgame</li></router-link>
+          <router-link class="router-nav" to="/endgame"><li>Endgame</li></router-link>
+          <router-link class="router-nav" to="/shop"><li>Shop</li></router-link>
+        </ul>
+        
+        <div v-else class="dropdown">
+            <button @click="toggle" class="dropbtn">{{ dropDownText }}</button>
+            <div class="dropdown-content" v-if="active">
+              <router-link class="router-nav" to="/openings"><li>Openings</li></router-link>
+              <router-link class="router-nav" to="/midgame"><li>Midgame</li></router-link>
+              <router-link class="router-nav" to="/endgame"><li>Endgame</li></router-link>
+              <router-link class="router-nav" to="/shop"><li>Shop</li></router-link>
+            </div>
         </div>
       </div>
-    </nav>
+      
+      <div class="nav-account">
+        <router-link v-if="!isLoggedIn" class="router-nav" to="/account/sign-in">
+          <button>Sign In</button>
+        </router-link>
+        <router-link v-else class="router-nav" to="/account/manage">
+          <button>Manage</button>
+        </router-link>
+      </div>
   </header>
 </div>
 </template>
@@ -50,9 +44,9 @@ export default {
   name: 'NavigationBar',
   data () {
       return {
-        windowWidth: window.innerWidth,
         active: false,
-        dropDownText: "=",
+        windowWidth: window.innerWidth,
+        dropDownText: "Menu",
       }
   },
   computed: {
@@ -62,7 +56,7 @@ export default {
   },
   methods: {
     toggle () {
-      this.dropDownText = (this.active) ? "=" : "×";
+      this.dropDownText = (this.active) ? "Menu" : "×";
       this.active = !this.active;
     }
   },
@@ -70,7 +64,13 @@ export default {
     window.onresize = () => {
       this.windowWidth = window.innerWidth;
     }
-  }
+  },
+  watch:{
+    $route (){
+        this.active = false;
+        this.dropDownText = "Menu";
+    }
+}
 }
 </script>
 
@@ -84,12 +84,31 @@ export default {
   z-index: 100;
 }
 
-.mobile {
-  display: none;
+p {
+  display: inline-block;
+  text-decoration: none;
 }
 
-.desktop {
-  display: block;
+p:hover{
+  color: white;
+  cursor: pointer;
+}
+
+button {
+  display: inline-block;
+  text-decoration: none;
+  font-size: 18px;
+
+  border: 1px solid black;
+  background-color: black;
+  color: lightgray;
+  padding: 5px;
+  border-radius: 5px;
+}
+
+button:hover{
+  color: white;
+  cursor: pointer;
 }
 
 header {
@@ -101,30 +120,26 @@ header {
   top: 0;
   backdrop-filter: blur(2px);
 
-  border-bottom: 1px solid black;;
+  border-bottom: 1px solid black;
 }
 
-nav {
+ul {
+  display:flex;
+
   height: 100%;
   width: 100%;
-}
 
-nav ul {
-  list-style: none;
-  padding: 0;
-  display: flex;
   justify-content: space-around;
-  font-size: 25px;
-  line-height: 50px;
-  text-align: center;
 }
 
-nav li {
+li {
   display: inline-block;
-  text-decoration: none;
+  
+  font-size: 18px;
+  line-height: 50px;
 }
 
-nav li:hover{
+li:hover{
   color: white;
   cursor: pointer;
 }
@@ -138,71 +153,100 @@ nav li:hover{
   padding-right: 5px;
 }
 
+.nav-logo {
+  width: 200px;
+  height: 100%;
+
+  line-height: 50px;
+  padding: 0px 15px 0px 15px;
+
+  display: inline-block;
+  float: left;
+}
+
 .nav-logo:hover {
   color: white;
   cursor: pointer;
 }
 
+.nav-content {
+  width: calc(100vw - 420px);
+  height: 100%;
+
+  text-align: center;
+
+  line-height: 50px;
+
+  display: inline-block;
+  float:left;
+}
+
+.nav-account {
+  height: 100%;
+
+  line-height: 50px;
+  padding: 0px 15px 0px 15px;
+
+  display: inline-block;
+  float: right;
+}
+
+.nav-account:hover {
+  color: white;
+  cursor: pointer;
+}
+
 @media only screen and (max-width: 1000px) {
-  .desktop {
-    display: none;
+  
+  .logo {
+    font-size: 24px;
   }
-
-  .mobile {
-    display: block;
-  }
-
-  p {
-    display: inline-block;
-  }
-
-  button {
-    color: lightgray;
-    position: fixed;
-    display: inline-block;
-    line-height: 50px;
-  }
-
-  .dropdown {
-    overflow: hidden;
+  .nav-logo {
     width: 160px;
   }
 
-  nav {
-    height: 100%;
-    width: 100%;
+  .icon {
+    height: 16px;
   }
 
-  nav div {
-    list-style: none;
-    padding: 0;
-    justify-content: space-around;
-    font-size: 25px;
-    line-height: 50px;
-    text-align: center;
-    display: flex;
+  .dropbtn {
+    background-color: black;
+    color: lightgray;
+    padding: 5px;
+    width: 52px;
+    border: 1px solid black;
+    border-radius: 5px;
+    font-size: 18px;
+    border: none;
+
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .dropdown {
+    position: relative;
+    margin: 0 auto;
+    display: inline-block;
   }
 
   .dropdown-content {
     display: block;
-    position: inherit;
-    background: rgba(31, 41, 55, 0.95);
-    backdrop-filter: blur(2px);
-    min-width: 160px;
-    margin-top: 50px;
+    position: absolute;
+    background-color: rgb(31, 41, 55);
+    width: 100px;
+    z-index: 99;
   }
 
-  .dropdown-content a {
-    float: none;
+  .dropdown-content li {
     color: lightgray;
-    padding: 5px;
+    padding: 12px;
     text-decoration: none;
     display: block;
-    text-align: center;
   }
 
-  .icon {
-    padding: 16px 3px 0px 0px;
+  .dropdown-content li:hover {
+    color: white;
   }
+
 }
 </style>
