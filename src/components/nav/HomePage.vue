@@ -178,10 +178,8 @@ button:hover {
 }
 
 .block-two-container {
-  width: 25%;
+  width: 100%;
   height: 100%;
-
-  float:left;
 }
 
 .block-two-text {
@@ -202,6 +200,8 @@ button:hover {
 .img2 {
   object-fit: contain;
   width: 100%;
+  max-width: 400px;
+  max-height: 400px;
 
   position: sticky;
 
