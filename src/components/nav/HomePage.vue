@@ -15,6 +15,7 @@
   </div>
   <div class="block-two">
     <div class="center-one">
+      <h4>Learn Something New</h4>
       <div class="block-two-container">
         <div class="block-two-img">
           <img class="img2" src="homepage/homepage-fianchetto.png">
@@ -44,7 +45,7 @@
           <img class="img2" src="homepage/homepage-ladder.png">
         </div>
         <div class="block-two-text">
-          <p>Learn endgame patterns.</p>
+          <p>Master endgame patterns.</p>
         </div>
       </div>
     </div>
@@ -55,23 +56,45 @@
 
       <div class="block-three-slideshow">
         <div v-if="displayBlock3Img==1" class="block-three-img">
-          <h5>1. Sign Up for a Free Account</h5>
+          <h5>Sign Up for an Account</h5>
+          <img class="scroll-img" src="homepage/homepage-scroll-1.png">
+          <ul>
+            <li>Accounts are free</li>
+            <li>Sign up is quick and easy</li>
+            <li>No personal information required</li>
+          </ul>
         </div>
 
         <div v-if="displayBlock3Img==2" class="block-three-img">
-          <h5>2. Learn from each Lesson</h5>
+          <h5>Complete each Lesson</h5>
+          <img class="scroll-img" src="homepage/homepage-scroll-2.png">
+          <ul>
+            <li>Take notes on key information </li>
+            <li>More than 20 lessons available</li> 
+            <li>Learn new tactics and strategies</li>
+          </ul>
         </div>
 
         <div v-if="displayBlock3Img==3" class="block-three-img">
-          <h5>3. Apply what you Learned</h5>
+          <h5>Apply what you Learned</h5>
+          <img class="scroll-img" src="homepage/homepage-scroll-3.png">
+          <ul>
+            <li>Try out a new opening</li>
+            <li></li>
+            <li>Play games online or over the board</li> 
+            <li>Chess sets can be purchased at the Shop</li>
+          </ul>
         </div>
       </div>
 
       <div class="block-three-buttons">
         <div class="block-three-buttons-span">
-          <button @click="changeBlock3Img(1)" class="block-three-slideshow-button">1</button>
-          <button @click="changeBlock3Img(2)" class="block-three-slideshow-button">2</button>
-          <button @click="changeBlock3Img(3)" class="block-three-slideshow-button">3</button>
+          <button @click="changeBlock3Img(1)"
+          v-bind:class="{ 'block-three-active-button' : displayBlock3Img == 1}">1</button>
+          <button @click="changeBlock3Img(2)"
+          v-bind:class="{ 'block-three-active-button' : displayBlock3Img == 2}">2</button>
+          <button @click="changeBlock3Img(3)"
+          v-bind:class="{ 'block-three-active-button' : displayBlock3Img == 3}">3</button>
         </div>
       </div>
     </div>
@@ -116,8 +139,11 @@ h3 {
 h4 {
   line-height: 50px;
   font-size: 30px;
+  width: 100%;
 
   text-align: center;
+
+  text-decoration: underline;
 }
 
 h5 {
@@ -198,8 +224,10 @@ input {
 }
 
 .block-two-container {
-  width: 100%;
+  width: 25%;
   height: 100%;
+
+  float:left;
 }
 
 .block-two-text {
@@ -242,16 +270,16 @@ input {
 }
 
 .block-three {
-  background-color: white;
+  background-color: lightgray;
   color: black;
-  height: 600px;
+  height: 750px;
   width: 100%;
   box-sizing: border-box;
   padding: 50px 180px 50px 180px;
 }
 
 .block-three-center {
-  width: 50%;
+  min-width: 50%;
   height: 100%;
   margin: 0 auto;
 
@@ -262,10 +290,14 @@ input {
   padding: 20px;
 }
 
-.block-three-slideshow {
-  height: 400px;
+.scroll-img {
   width: 100%;
-  border: 1px black solid;
+  max-width: 500px;
+}
+
+.block-three-slideshow {
+  height: 500px;
+  width: 100%;
 }
 
  .block-three-img {
@@ -287,7 +319,16 @@ input {
   height: 100px;
 }
 
- .block-three-slideshow-button {
+.block-three-active-button {
+  background-color: rgb(53,62,75);
+  color: white;
+}
+
+.block-three-active-button:hover {
+  background-color: rgb(53,62,75);
+}
+
+button {
   height: 30px;
   width: 30px;
 
@@ -296,7 +337,7 @@ input {
   background-color: darkgray;
  }
 
- .block-three-slideshow-button:hover {
+ button:hover {
   background-color: lightgray;
  }
  
@@ -304,6 +345,10 @@ input {
   h1 {
     font-size: 30px;
     line-height: 100px;
+  }
+
+  ul {
+    padding-bottom: 30px;
   }
   
   .block-one {
@@ -352,6 +397,33 @@ input {
     max-width: 400px;
   }
 
+  .block-three {
+    padding: 0;
+    padding-top: 30px;
+    padding-bottom: 30px;
+
+    height: auto;
+  }
+  .block-three-center {
+    width: 90%;
+  }
+
+  .block-three-slideshow {
+    height: auto;
+    width: 100%;
+    padding: 10px 0 10px;
+  }
+
+  .block-three-img {
+    display: block;
+    width: 100%;
+    height: auto;
+    min-height: none;
+  }
+
+  .block-three-buttons {
+    height: auto;
+  }
 }
 
 </style>
