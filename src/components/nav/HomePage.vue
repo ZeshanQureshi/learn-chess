@@ -55,7 +55,7 @@
       <h4>How it Works</h4>
 
       <div class="block-three-slideshow">
-        <Transition>
+        <Transition name="slide">
         <div v-if="displayBlock3Img==1" class="block-three-img">
           <h5>
             <router-link to="/account/register" class="homepage-nav">Sign Up</router-link>
@@ -69,7 +69,7 @@
         </div>
         </Transition>
 
-        <Transition>
+        <Transition name="slide">
         <div v-if="displayBlock3Img==2" class="block-three-img">
           <h5>Complete each Lesson</h5>
           <img class="scroll-img" src="homepage/homepage-scroll-2.png">
@@ -81,7 +81,7 @@
         </div>
         </Transition>
 
-        <Transition>
+        <Transition name="slide">
         <div v-if="displayBlock3Img==3" class="block-three-img">
           <h5>Apply what you Learned</h5>
           <img class="scroll-img" src="homepage/homepage-scroll-3.png">
@@ -124,25 +124,27 @@ export default {
 
   methods: {
     changeBlock3Img(num) {
-      this.displayBlock3Img = 0;
 
-      setTimeout(function () { this.displayBlock3Img = num }.bind(this), 1000)  
-      
+      this.displayBlock3Img = 0;
+      setTimeout(function () { this.displayBlock3Img = num }.bind(this), 1200);
+     
     }
   }
 }
 </script>
 
 <style scoped>
-.v-enter-active,
-.v-leave-active {
-  transition: opacity 1s ease;
+.slide-leave-active,
+.slide-enter-active {
+  transition: 1s;
+}
+.slide-enter {
+  transform: translate(100%, 0);
+}
+.slide-leave-to {
+  transform: translate(-100%, 0);
 }
 
-.v-enter-from,
-.v-leave-to {
-  opacity: 0;
-}
 .homepage-nav {
   color: inherit;
 }
@@ -436,10 +438,9 @@ button {
   }
 
   .block-three-slideshow {
-    height: auto;
+    height: 500px;
     width: 100%;
     padding: 10px 0 10px;
-    min-height: 380px;
   }
 
   .block-three-img {
@@ -447,10 +448,29 @@ button {
     width: 100%;
     height: auto;
     min-height: none;
+    
   }
 
   .block-three-buttons {
     height: auto;
+  }
+}
+
+@media only screen and (max-width: 500px) {
+  .block-three-slideshow {
+    height: 450px;
+  }
+}
+
+@media only screen and (max-width: 450px) {
+  .block-three-slideshow {
+    height: 420px;
+  }
+}
+
+@media only screen and (max-width: 400px) {
+  .block-three-slideshow {
+    height: 380px;
   }
 }
 
