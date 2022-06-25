@@ -16,7 +16,7 @@
   <div class="block-two">
     <div class="center-one">
       <h4>Learn Something New</h4>
-      <div class="block-two-container">
+      <div class="block-two-container" data-aos="zoom-in" data-aos-duration="1000" data-aos-offset = "350">
         <div class="block-two-img">
           <img class="img2" src="homepage/homepage-fianchetto.png">
         </div>
@@ -24,7 +24,7 @@
           <p>Discover unique openings.</p>
         </div>
       </div>
-      <div class="block-two-container">
+      <div class="block-two-container" data-aos="zoom-in" data-aos-duration="1000" data-aos-offset = "350">
         <div class="block-two-img">
           <img class="img2" src="homepage/homepage-fork.png">
         </div>
@@ -32,7 +32,7 @@
           <p>Improve your midgame tactics.</p>
         </div>
       </div>
-      <div class="block-two-container">
+      <div class="block-two-container" data-aos="zoom-in" data-aos-duration="1000" data-aos-offset = "330">
         <div class="block-two-img">
           <img class="img2" src="homepage/homepage-backrank.png">
         </div>
@@ -40,7 +40,7 @@
           <p>Develop checkmate recognition.</p>
         </div>
       </div>
-      <div class="block-two-container">
+      <div class="block-two-container" data-aos="zoom-in" data-aos-duration="1000" data-aos-offset = "350">
         <div class="block-two-img">
           <img class="img2" src="homepage/homepage-ladder.png">
         </div>
