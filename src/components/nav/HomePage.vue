@@ -439,6 +439,7 @@ button {
     height: auto;
     width: 100%;
     padding: 10px 0 10px;
+    min-height: 380px;
   }
 
   .block-three-img {
