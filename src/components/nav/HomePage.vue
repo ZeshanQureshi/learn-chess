@@ -32,7 +32,7 @@
           <p>Improve your midgame tactics.</p>
         </div>
       </div>
-      <div class="block-two-container" data-aos="zoom-in" data-aos-duration="1000" data-aos-offset = "330">
+      <div class="block-two-container" data-aos="zoom-in" data-aos-duration="1000" data-aos-offset = "350">
         <div class="block-two-img">
           <img class="img2" src="homepage/homepage-backrank.png">
         </div>
