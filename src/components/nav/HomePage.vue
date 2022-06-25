@@ -55,16 +55,21 @@
       <h4>How it Works</h4>
 
       <div class="block-three-slideshow">
+        <Transition>
         <div v-if="displayBlock3Img==1" class="block-three-img">
-          <h5>Sign Up for an Account</h5>
+          <h5>
+            <router-link to="/account/register" class="homepage-nav">Sign Up</router-link>
+             for an Account</h5>
           <img class="scroll-img" src="homepage/homepage-scroll-1.png">
           <ul>
             <li>Accounts are free</li>
-            <li>Sign up is quick and easy</li>
+            <li>Registration is quick and easy</li>
             <li>No personal information required</li>
           </ul>
         </div>
+        </Transition>
 
+        <Transition>
         <div v-if="displayBlock3Img==2" class="block-three-img">
           <h5>Complete each Lesson</h5>
           <img class="scroll-img" src="homepage/homepage-scroll-2.png">
@@ -74,7 +79,9 @@
             <li>Learn new tactics and strategies</li>
           </ul>
         </div>
+        </Transition>
 
+        <Transition>
         <div v-if="displayBlock3Img==3" class="block-three-img">
           <h5>Apply what you Learned</h5>
           <img class="scroll-img" src="homepage/homepage-scroll-3.png">
@@ -82,9 +89,13 @@
             <li>Try out a new opening</li>
             <li></li>
             <li>Play games online or over the board</li> 
-            <li>Chess sets can be purchased at the Shop</li>
+            <li>Chess sets can be purchased at the 
+              <router-link to="/shop" class="homepage-nav">Shop</router-link>
+            </li>
           </ul>
         </div>
+        </Transition>
+        
       </div>
 
       <div class="block-three-buttons">
@@ -113,13 +124,29 @@ export default {
 
   methods: {
     changeBlock3Img(num) {
-      this.displayBlock3Img = num;
+      this.displayBlock3Img = 0;
+
+      setTimeout(function () { this.displayBlock3Img = num }.bind(this), 1000)  
+      
     }
   }
 }
 </script>
 
 <style scoped>
+.v-enter-active,
+.v-leave-active {
+  transition: opacity 1s ease;
+}
+
+.v-enter-from,
+.v-leave-to {
+  opacity: 0;
+}
+.homepage-nav {
+  color: inherit;
+}
+
 h1 {
   font-size: 45px;
   line-height: 240px;
