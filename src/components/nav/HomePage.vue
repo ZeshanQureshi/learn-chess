@@ -124,10 +124,10 @@ export default {
 
   methods: {
     changeBlock3Img(num) {
-
-      this.displayBlock3Img = 0;
-      setTimeout(function () { this.displayBlock3Img = num }.bind(this), 1200);
-     
+      if (this.displayBlock3Img != num) {
+        this.displayBlock3Img = 0;
+        setTimeout(function () { this.displayBlock3Img = num }.bind(this), 1200);
+      }
     }
   }
 }
@@ -139,10 +139,10 @@ export default {
   transition: 1s;
 }
 .slide-enter {
-  transform: translate(100%, 0);
+  transform: translate(250px, 0);
 }
 .slide-leave-to {
-  transform: translate(-100%, 0);
+  transform: translate(-250px, 0);
 }
 
 .homepage-nav {
@@ -362,6 +362,17 @@ button {
  }
  
 @media only screen and (max-width: 1000px) {
+  .slide-leave-active,
+.slide-enter-active {
+  transition: 1s;
+}
+.slide-enter {
+  transform: translate(100px, 0);
+}
+.slide-leave-to {
+  transform: translate(-100px, 0);
+}
+  
   h1 {
     font-size: 30px;
     line-height: 100px;
