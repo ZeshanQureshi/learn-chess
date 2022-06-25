@@ -7,6 +7,7 @@ import store from './store/index.js';
 import AOS from 'aos';
 import 'aos/dist/aos.css';
 
+import 'animate.css';
 
 const app = createApp(App);
 

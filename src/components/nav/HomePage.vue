@@ -187,18 +187,6 @@ ul {
   padding-bottom: 60px;
 }
 
-input {
-  border: 1px black solid;
-  background-color: white;
-  text-align: center;
-  width: 50%;
-  min-width: 254px;
-
-  display: block;
-  margin : 0 auto;
-  margin-bottom: 30px;
-}
-
 .block-one {
   background-color: rgb(53,62,75);
   color: white;
@@ -351,6 +339,7 @@ input {
 .block-three-active-button {
   background-color: rgb(53,62,75);
   color: white;
+  cursor:default;
 }
 
 .block-three-active-button:hover {
@@ -364,6 +353,8 @@ button {
   border-radius: 30px;
 
   background-color: darkgray;
+
+  cursor: pointer;
  }
 
  button:hover {
