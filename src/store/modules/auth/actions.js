@@ -3,7 +3,9 @@ let timer;
 export default {
   async login(context, payload) {
 
-    const response = await fetch('https://identitytoolkit.googleapis.com/v1/accounts:signInWithPassword?key=', {
+    console.log(process.env.VUE_APP_FIREBASE_API);
+
+    const response = await fetch(`https://identitytoolkit.googleapis.com/v1/accounts:signInWithPassword?key=${process.env.VUE_APP_FIREBASE_API}`, {
       method: 'POST',
       body: JSON.stringify({
         email: payload.email,
