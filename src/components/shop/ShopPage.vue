@@ -1,8 +1,9 @@
 <template>
 <div>
   <div class="shop-header"></div>
-
   <div class="shop-center">
+    Coming Soon!
+    <!--
     <div class="shop-sidebar">
       <h4>Refinements</h4>
       <div class="shop-refinement">
@@ -67,6 +68,7 @@
       <div class="shop-item"></div>
 
     </div>
+      -->
   </div>
 </div>
 </template>
