@@ -58,6 +58,7 @@
         </div>
     </div>
   </footer>
+  <p class="footer-contact">Created By <a href="https://zeshanqureshi.ca/" target="_blank">Zeshan Qureshi</a></p>
 </div>
 </template>
 
@@ -120,11 +121,16 @@ footer {
   display: block;
   overflow: auto;
 
-  padding: 50px;
+  padding: 50px 50px 20px 50px;
   box-sizing: border-box;
 
   font-size: 12px;
 
+}
+
+a {
+  text-decoration: underline;
+  color: inherit;
 }
 
 li {
@@ -176,6 +182,14 @@ b {
   position: relative;
 
   text-align: center;
+}
+
+.footer-contact {
+  width: 100%;
+  font-size: 12px;
+  height: 30px;
+  text-align: center;
+  background-color: rgb(230, 229, 229);
 }
 
 @media only screen and (max-width: 1000px) {
