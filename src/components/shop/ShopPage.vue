@@ -2,9 +2,7 @@
 <div>
   <div class="shop-header"></div>
   <div class="shop-center">
-    Coming Soon!
-    <!--
-    <div class="shop-sidebar">
+    <div v-if="windowWidth > 1000" class="shop-sidebar">
       <h4>Refinements</h4>
       <div class="shop-refinement">
         <h5>Size</h5>
@@ -46,7 +44,7 @@
         <h5>Board</h5>
         <ul>
           <label><li><input type="checkbox"/>Folding</li></label>
-          <label><li><input type="checkbox"/>Single Piece</li></label>
+          <label><li><input type="checkbox"/>Non-Folding</li></label>
         </ul>
       </div>
 
@@ -61,14 +59,37 @@
     
 
     <div class="shop-content">
-      <div class="shop-item"></div>
-      <div class="shop-item"></div>
-      <div class="shop-item"></div>
-      <div class="shop-item"></div>
-      <div class="shop-item"></div>
-
+      <div class="shop-row">
+        <div class="shop-item"></div>
+        <div class="shop-item"></div>
+        <div class="shop-item"></div>
+      </div>
+      <div class="shop-row">
+        <div class="shop-item"></div>
+        <div class="shop-item"></div>
+        <div class="shop-item"></div>
+      </div>
+      <div class="shop-row">
+        <div class="shop-item"></div>
+        <div class="shop-item"></div>
+        <div class="shop-item"></div>
+      </div>
+      <div class="shop-row">
+        <div class="shop-item"></div>
+        <div class="shop-item"></div>
+        <div class="shop-item"></div>
+      </div>
     </div>
-      -->
+
+    <div  v-if="windowWidth > 1000" class="shop-bag">
+      <h4>Shopping Cart</h4>
+      <div class="shop-cart">
+        <p class="shop-cart-text">{{ items }}</p>
+      </div>
+      <div class="shop-button">
+        <button>Checkout</button>
+      </div>
+    </div>
   </div>
 </div>
 </template>
@@ -76,7 +97,12 @@
 <script>
 export default {
   name: 'ShopPage',
-
+  data () {
+      return {
+        windowWidth: window.innerWidth,
+        items: "No Items"
+      }
+  }
 }
 </script>
 
@@ -112,6 +138,13 @@ label:hover {
   float: left;
 }
 
+.shop-bag {
+  width: 200px;
+  height: 100%;
+  border-right: 1px black solid;
+  float: right;
+}
+
 .shop-center {
   width: 100%;
   height: calc(100vh - 202px);
@@ -125,23 +158,48 @@ label:hover {
 }
 
 .shop-content {
-  width: 100%;
+  width: calc(100% - 400px);
   height: 100%;
   background-color: white;
-  float: right;
   box-sizing: border-box;
   overflow-y: scroll;
   overflow-x: hidden;
 }
  
 .shop-item {
-  width: 25%;
+  width: calc(33% - 11px);
   height: 300px;
   border: 1px black solid;
   margin: 5px;
   border-radius: 5px;
   background-color: white;
   float: left;
+}
+
+.shop-row {
+  width: 100%;
+}
+
+.shop-button {
+  display: flex;
+  justify-content: center;
+}
+
+button {
+  padding: 5px;
+  background-color: black;
+  color: lightgray;
+  border-radius: 5px;
+  margin-top: 20px;
+}
+
+button:hover {
+  cursor: pointer;
+  color: white;
+}
+
+.shop-cart-text {
+  text-align: center;
 }
 
 @media only screen and (max-width: 1000px) {
