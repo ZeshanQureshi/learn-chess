@@ -2,7 +2,7 @@
 <div>
   <div class="shop-header"></div>
   <div class="shop-center">
-    <div v-if="windowWidth > 1000" class="shop-sidebar">
+    <div v-if="windowWidth>1000" class="shop-sidebar">
       <h4>Refinements</h4>
       <div class="shop-refinement">
         <h5>Size</h5>
@@ -60,31 +60,43 @@
 
     <div class="shop-content">
       <div class="shop-row">
-        <div class="shop-item"></div>
-        <div class="shop-item"></div>
-        <div class="shop-item"></div>
+        <div class="shop-item" v-for="items in set1">
+          <img class="shop-img" v-bind:src="'/shop/' + items.img">
+          <p>{{ items.name }}</p>
+          <p>{{ items.cost }}</p>
+          <button class="shop-add" @click="addItemToCart(items.name, items.price)">Add to Cart</button>
+        </div>
       </div>
       <div class="shop-row">
-        <div class="shop-item"></div>
-        <div class="shop-item"></div>
-        <div class="shop-item"></div>
+        <div class="shop-item" v-for="items in set2">
+          <img class="shop-img" v-bind:src="'/shop/' + items.img">
+          <p>{{ items.name }}</p>
+          <p>{{ items.cost }}</p>
+          <button class="shop-add">Add to Cart</button>
+        </div>
       </div>
       <div class="shop-row">
-        <div class="shop-item"></div>
-        <div class="shop-item"></div>
-        <div class="shop-item"></div>
+        <div class="shop-item" v-for="items in set3">
+          <img class="shop-img" v-bind:src="'/shop/' + items.img">
+          <p>{{ items.name }}</p>
+          <p>{{ items.cost }}</p>
+          <button class="shop-add">Add to Cart</button>
+        </div>
       </div>
       <div class="shop-row">
-        <div class="shop-item"></div>
-        <div class="shop-item"></div>
-        <div class="shop-item"></div>
+        <div class="shop-item" v-for="items in set4">
+          <img class="shop-img" v-bind:src="'/shop/' + items.img">
+          <p>{{ items.name }}</p>
+          <p>{{ items.cost }}</p>
+          <button class="shop-add">Add to Cart</button>
+        </div>
       </div>
     </div>
 
     <div  v-if="windowWidth > 1000" class="shop-bag">
       <h4>Shopping Cart</h4>
       <div class="shop-cart">
-        <p class="shop-cart-text">{{ items }}</p>
+        <p class="shop-cart-text" v-for="item in cart">{{ item }}</p>
       </div>
       <div class="shop-button">
         <button>Checkout</button>
@@ -100,8 +112,40 @@ export default {
   data () {
       return {
         windowWidth: window.innerWidth,
-        items: "No Items"
+        cart: ['No Items'],
+        total: 0,
+        set1: [
+          {name: "Black and White Magnetic", price: 26, img:"bnw-mag.png", cost:"$26.00", tags:"magnetic"},
+          {name: "Black and White Magnetic", img:"bnw-mag.png", cost:"$51.00", tags:"magnetic"},
+          {name: "Black and White Magnetic", img:"bnw-mag.png", cost:"$36.00", tags:"magnetic"}
+        ],
+        set2: [
+          {name: "Black and White Magnetic", img:"bnw-mag.png", cost:"$26.00", tags:"magnetic"},
+          {name: "Black and White Magnetic", img:"bnw-mag.png", cost:"$26.00", tags:"magnetic"},
+          {name: "Black and White Magnetic", img:"bnw-mag.png", cost:"$26.00", tags:"magnetic"}
+        ],
+        set3: [
+          {name: "Black and White Magnetic", img:"bnw-mag.png", cost:"$26.00", tags:"magnetic"},
+          {name: "Black and White Magnetic", img:"bnw-mag.png", cost:"$26.00", tags:"magnetic"},
+          {name: "Black and White Magnetic", img:"bnw-mag.png", cost:"$26.00", tags:"magnetic"}
+        ],
+        set4: [
+          {name: "Black and White Magnetic", img:"bnw-mag.png", cost:"$26.00", tags:"magnetic"},
+          {name: "Black and White Magnetic", img:"bnw-mag.png", cost:"$26.00", tags:"magnetic"},
+          {name: "Black and White Magnetic", img:"bnw-mag.png", cost:"$26.00", tags:"magnetic"}
+        ],
       }
+  },
+  methods: {
+    addItemToCart(nameItem, cost) {
+      this.total += cost;
+
+      if (this.cart.length == 1) {
+        this.cart.pop;
+      }
+
+      this.cart.push = [nameItem]; 
+    }
   }
 }
 </script>
@@ -174,6 +218,15 @@ label:hover {
   border-radius: 5px;
   background-color: white;
   float: left;
+  text-align: center;
+}
+
+.shop-img {
+  max-width: 80%;
+  max-height: calc(100% - 100px);
+  margin-left: auto;
+  margin-right: auto;
+  display: block;
 }
 
 .shop-row {
