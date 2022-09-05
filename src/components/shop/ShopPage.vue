@@ -64,7 +64,7 @@
           <img class="shop-img" v-bind:src="'/shop/' + items.img">
           <p>{{ items.name }}</p>
           <p>{{ items.cost }}</p>
-          <button class="shop-add" @click="addItemToCart(items.name, items.price)">Add to Cart</button>
+          <button class="shop-add" @click="addItemToCart(items.name, items.price)">{{ items.status }}</button>
         </div>
       </div>
       <div class="shop-row">
@@ -115,24 +115,24 @@ export default {
         cart: ['No Items'],
         total: 0,
         set1: [
-          {name: "Black and White Magnetic", price: 26, img:"bnw-mag.png", cost:"$26.00", tags:"magnetic"},
-          {name: "Black and White Magnetic", img:"bnw-mag.png", cost:"$51.00", tags:"magnetic"},
-          {name: "Black and White Magnetic", img:"bnw-mag.png", cost:"$36.00", tags:"magnetic"}
+          {name: "Black Magnetic", price: 26, img:"bnw-mag.png", cost:"$26.00", tags:"magnetic", status:"Add to Cart"},
+          {name: "Red Glass", price: 26, img:"bnw-mag.png", cost:"$26.00", tags:"magnetic", status:"Add to Cart"},
+          {name: "Blue Wooden", price: 26, img:"bnw-mag.png", cost:"$26.00", tags:"magnetic", status:"Add to Cart"}
         ],
         set2: [
-          {name: "Black and White Magnetic", img:"bnw-mag.png", cost:"$26.00", tags:"magnetic"},
-          {name: "Black and White Magnetic", img:"bnw-mag.png", cost:"$26.00", tags:"magnetic"},
-          {name: "Black and White Magnetic", img:"bnw-mag.png", cost:"$26.00", tags:"magnetic"}
+          {name: "Black and White Magnetic", price: 26, img:"bnw-mag.png", cost:"$26.00", tags:"magnetic", status:"Add to Cart"},
+          {name: "Black and White Magnetic", price: 26, img:"bnw-mag.png", cost:"$26.00", tags:"magnetic", status:"Add to Cart"},
+          {name: "Black and White Magnetic", price: 26, img:"bnw-mag.png", cost:"$26.00", tags:"magnetic", status:"Add to Cart"}
         ],
         set3: [
-          {name: "Black and White Magnetic", img:"bnw-mag.png", cost:"$26.00", tags:"magnetic"},
-          {name: "Black and White Magnetic", img:"bnw-mag.png", cost:"$26.00", tags:"magnetic"},
-          {name: "Black and White Magnetic", img:"bnw-mag.png", cost:"$26.00", tags:"magnetic"}
+          {name: "Black and White Magnetic", price: 26, img:"bnw-mag.png", cost:"$26.00", tags:"magnetic", status:"Add to Cart"},
+          {name: "Black and White Magnetic", price: 26, img:"bnw-mag.png", cost:"$26.00", tags:"magnetic", status:"Add to Cart"},
+          {name: "Black and White Magnetic", price: 26, img:"bnw-mag.png", cost:"$26.00", tags:"magnetic", status:"Add to Cart"}
         ],
         set4: [
-          {name: "Black and White Magnetic", img:"bnw-mag.png", cost:"$26.00", tags:"magnetic"},
-          {name: "Black and White Magnetic", img:"bnw-mag.png", cost:"$26.00", tags:"magnetic"},
-          {name: "Black and White Magnetic", img:"bnw-mag.png", cost:"$26.00", tags:"magnetic"}
+          {name: "Black and White Magnetic", price: 26, img:"bnw-mag.png", cost:"$26.00", tags:"magnetic", status:"Add to Cart"},
+          {name: "Black and White Magnetic", price: 26, img:"bnw-mag.png", cost:"$26.00", tags:"magnetic", status:"Add to Cart"},
+          {name: "Black and White Magnetic", price: 26, img:"bnw-mag.png", cost:"$26.00", tags:"magnetic", status:"Add to Cart"}
         ],
       }
   },
@@ -219,6 +219,11 @@ label:hover {
   background-color: white;
   float: left;
   text-align: center;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -o-user-select: none;
+  user-select: none;
 }
 
 .shop-img {
@@ -227,6 +232,10 @@ label:hover {
   margin-left: auto;
   margin-right: auto;
   display: block;
+  -webkit-user-drag: none;
+  -khtml-user-drag: none;
+  -moz-user-drag: none;
+  -o-user-drag: none;
 }
 
 .shop-row {
