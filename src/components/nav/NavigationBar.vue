@@ -13,7 +13,7 @@
           <router-link class="router-nav" to="/openings"><li>Openings</li></router-link>
           <router-link class="router-nav" to="/midgame"><li>Midgame</li></router-link>
           <router-link class="router-nav" to="/endgame"><li>Endgame</li></router-link>
-          <!--<router-link class="router-nav" to="/shop"><li>Shop</li></router-link>-->
+          <router-link class="router-nav" to="/shop"><li>Shop</li></router-link>
         </ul>
         
         <div v-else class="dropdown">
@@ -22,7 +22,7 @@
               <router-link class="router-nav" to="/openings"><li>Openings</li></router-link>
               <router-link class="router-nav" to="/midgame"><li>Midgame</li></router-link>
               <router-link class="router-nav" to="/endgame"><li>Endgame</li></router-link>
-              <!--<router-link class="router-nav" to="/shop"><li>Shop</li></router-link>-->
+              <router-link class="router-nav" to="/shop"><li>Shop</li></router-link>
             </div>
         </div>
       </div>

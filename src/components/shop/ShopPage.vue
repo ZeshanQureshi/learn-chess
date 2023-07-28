@@ -188,21 +188,19 @@ label:hover {
 
 .shop-sidebar {
   width: 200px;
-  height: 100%;
   border-right: 1px black solid;
   float: left;
 }
 
 .shop-bag {
   width: 200px;
-  height: 100%;
   border-right: 1px black solid;
   float: right;
 }
 
 .shop-center {
   width: 100%;
-  height: calc(100vh - 202px);
+  height: 100%;
   display: flex;
 }
 
