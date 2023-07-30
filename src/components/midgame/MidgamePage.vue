@@ -10,49 +10,49 @@
   <div class="midgame-center">
     <router-link class="router-nav" to="/midgame/pin">
       <div class="midgame-content-left">
-        <img v-bind:src="'/midgame/midgame-pin.png'">
+        <img v-bind:src="'/learn-chess/midgame/midgame-pin.png'">
         <p>Pin</p>
       </div>
     </router-link>
     <router-link class="router-nav" to="/midgame/fork">
       <div class="midgame-content-right" v-bind:class="{ 'midgame-blur' : !isLoggedIn}">
-        <img v-bind:src="'/midgame/midgame-fork.png'">
+        <img v-bind:src="'/learn-chess/midgame/midgame-fork.png'">
         <p>Fork</p>
       </div>
     </router-link>
     <router-link class="router-nav" to="/midgame/skewer">
       <div class="midgame-content-left" v-bind:class="{ 'midgame-blur' : !isLoggedIn}">
-        <img v-bind:src="'/midgame/midgame-skewer.png'">
+        <img v-bind:src="'/learn-chess/midgame/midgame-skewer.png'">
         <p>Skewer</p>
       </div>
     </router-link>
     <router-link class="router-nav" to="/midgame/discovery">
       <div class="midgame-content-right" v-bind:class="{ 'midgame-blur' : !isLoggedIn}">
-        <img v-bind:src="'/midgame/midgame-discovery.png'">
+        <img v-bind:src="'/learn-chess/midgame/midgame-discovery.png'">
         <p>Discovery</p>
       </div>
     </router-link>
     <router-link class="router-nav" to="/midgame/promotion">
       <div class="midgame-content-left" v-bind:class="{ 'midgame-blur' : !isLoggedIn}">
-        <img v-bind:src="'/midgame/midgame-promotion.png'">
+        <img v-bind:src="'/learn-chess/midgame/midgame-promotion.png'">
         <p>Promotion</p>
       </div>
     </router-link>
     <router-link class="router-nav" to="/midgame/en-passant">
       <div class="midgame-content-right" v-bind:class="{ 'midgame-blur' : !isLoggedIn}">
-        <img v-bind:src="'/midgame/midgame-en-passant.png'">
+        <img v-bind:src="'/learn-chess/midgame/midgame-en-passant.png'">
         <p>En Passant</p>
       </div>
     </router-link>
     <router-link class="router-nav" to="/midgame/hanging-piece">
       <div class="midgame-content-left" v-bind:class="{ 'midgame-blur' : !isLoggedIn}">
-        <img v-bind:src="'/midgame/midgame-hanging-piece.png'">
+        <img v-bind:src="'/learn-chess/midgame/midgame-hanging-piece.png'">
         <p>Hanging Piece</p>
       </div>
     </router-link>
     <router-link class="router-nav" to="/midgame/perpetual-checks">
       <div class="midgame-content-right" v-bind:class="{ 'midgame-blur' : !isLoggedIn}">
-        <img v-bind:src="'/midgame/midgame-perpetual-check.png'">
+        <img v-bind:src="'/learn-chess/midgame/midgame-perpetual-check.png'">
         <p>Perpetual Checks</p>
       </div>
     </router-link> 

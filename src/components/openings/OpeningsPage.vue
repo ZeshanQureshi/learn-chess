@@ -10,49 +10,49 @@
   <div class="openings-center">
     <router-link class="router-nav" to="/openings/ruy-lopez">
       <div class="openings-content-left">
-        <img v-bind:src="'/openings/openings-ruy-lopez.png'">
+        <img v-bind:src="'/learn-chess/openings/openings-ruy-lopez.png'">
         <p>Ruy Lopez</p>
       </div>
     </router-link>
     <router-link class="router-nav" to="/openings/pirc">
       <div class="openings-content-right" v-bind:class="{ 'openings-blur' : !isLoggedIn}">
-        <img v-bind:src="'/openings/openings-pirc-defence.png'">
+        <img v-bind:src="'/learn-chess/openings/openings-pirc-defence.png'">
         <p>Pirc Defence</p>
       </div>
     </router-link>
     <router-link class="router-nav" to="/openings/italian">
       <div class="openings-content-left" v-bind:class="{ 'openings-blur' : !isLoggedIn}">
-        <img v-bind:src="'/openings/openings-italian-game.png'">
+        <img v-bind:src="'/learn-chess/openings/openings-italian-game.png'">
         <p>Italian Game</p>
       </div>
     </router-link>
     <router-link class="router-nav" to="/openings/french">
       <div class="openings-content-right" v-bind:class="{ 'openings-blur' : !isLoggedIn}">
-        <img v-bind:src="'/openings/openings-french-defence.png'">
+        <img v-bind:src="'/learn-chess/openings/openings-french-defence.png'">
         <p>French Defence</p>
       </div>
     </router-link>
     <router-link class="router-nav" to="/openings/sicilian">
       <div class="openings-content-left" v-bind:class="{ 'openings-blur' : !isLoggedIn}">
-        <img v-bind:src="'/openings/openings-sicilian-defence.png'">
+        <img v-bind:src="'/learn-chess/openings/openings-sicilian-defence.png'">
         <p>Sicilian Defence</p>
       </div>
     </router-link>
     <router-link class="router-nav" to="/openings/queens-gambit">
       <div class="openings-content-right" v-bind:class="{ 'openings-blur' : !isLoggedIn}">
-        <img v-bind:src="'/openings/openings-queens-gambit.png'">
+        <img v-bind:src="'/learn-chess/openings/openings-queens-gambit.png'">
         <p>Queen's Gambit</p>
       </div>
     </router-link>
     <router-link class="router-nav" to="/openings/kings-fianchetto">
       <div class="openings-content-left" v-bind:class="{ 'openings-blur' : !isLoggedIn}">
-        <img v-bind:src="'/openings/openings-kings-fianchetto.png'">
+        <img v-bind:src="'/learn-chess/openings/openings-kings-fianchetto.png'">
         <p>King's Fianchetto</p>
       </div>
     </router-link>
     <router-link class="router-nav" to="/openings/caro-kann">
       <div class="openings-content-right" v-bind:class="{ 'openings-blur' : !isLoggedIn}">
-        <img v-bind:src="'/openings/openings-caro-kann-defence.png'">
+        <img v-bind:src="'/learn-chess/openings/openings-caro-kann-defence.png'">
         <p>Caro Kann Defence</p>
       </div>
     </router-link>

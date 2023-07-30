@@ -10,49 +10,49 @@
   <div class="endgame-center">
     <router-link class="router-nav" to="/endgame/fools-mate">
       <div class="endgame-content-left">
-        <img v-bind:src="'/endgame/endgame-fools-mate.png'">
+        <img v-bind:src="'/learn-chess/endgame/endgame-fools-mate.png'">
         <p>Fool's Mate</p>
       </div>
     </router-link>
     <router-link class="router-nav" to="/endgame/legals-mate">
       <div class="endgame-content-right" v-bind:class="{ 'endgame-blur' : !isLoggedIn}">
-        <img v-bind:src="'/endgame/endgame-legals-mate.png'">
+        <img v-bind:src="'/learn-chess/endgame/endgame-legals-mate.png'">
         <p>Legal's Mate</p>
       </div>
     </router-link>
     <router-link class="router-nav" to="/endgame/ladder-mate">
       <div class="endgame-content-left" v-bind:class="{ 'endgame-blur' : !isLoggedIn}">
-        <img v-bind:src="'/endgame/endgame-ladder-mate.png'">
+        <img v-bind:src="'/learn-chess/endgame/endgame-ladder-mate.png'">
         <p>Ladder Mate</p>
       </div>
     </router-link>
     <router-link class="router-nav" to="/endgame/arabian-mate">
       <div class="endgame-content-right" v-bind:class="{ 'endgame-blur' : !isLoggedIn}">
-        <img v-bind:src="'/endgame/endgame-arabian-mate.png'">
+        <img v-bind:src="'/learn-chess/endgame/endgame-arabian-mate.png'">
         <p>Arabian Mate</p>
       </div>
     </router-link>
     <router-link class="router-nav" to="/endgame/scholars-mate">
       <div class="endgame-content-left" v-bind:class="{ 'endgame-blur' : !isLoggedIn}">
-        <img v-bind:src="'/endgame/endgame-scholars-mate.png'">
+        <img v-bind:src="'/learn-chess/endgame/endgame-scholars-mate.png'">
         <p>Scholar's Mate</p>
       </div>
     </router-link>
     <router-link class="router-nav" to="/endgame/back-rank-mate">
       <div class="endgame-content-right" v-bind:class="{ 'endgame-blur' : !isLoggedIn}">
-        <img v-bind:src="'/endgame/endgame-back-rank-mate.png'">
+        <img v-bind:src="'/learn-chess/endgame/endgame-back-rank-mate.png'">
         <p>Back Rank Mate</p>
       </div>
     </router-link>
     <router-link class="router-nav" to="/endgame/smothered-mate">
       <div class="endgame-content-left" v-bind:class="{ 'endgame-blur' : !isLoggedIn}">
-        <img v-bind:src="'/endgame/endgame-smothered-mate.png'">
+        <img v-bind:src="'/learn-chess/endgame/endgame-smothered-mate.png'">
         <p>Smothered Mate</p>
       </div>
     </router-link>
     <router-link class="router-nav" to="/endgame/anastasias-mate">
       <div class="endgame-content-right" v-bind:class="{ 'endgame-blur' : !isLoggedIn}">
-        <img v-bind:src="'/endgame/endgame-anastasias-mate.png'">
+        <img v-bind:src="'/learn-chess/endgame/endgame-anastasias-mate.png'">
         <p>Anastasia's Mate</p>
       </div>
     </router-link>

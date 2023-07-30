@@ -37,7 +37,7 @@ import AccountForgot from '../components/account/AccountForgot.vue';
 import NotFound from '../components/nav/NotFound.vue';
 
 const router = createRouter({
-  history: createWebHistory(),
+  history: createWebHistory('/learn-chess/'),
   routes: [
     { path:'/', component: HomePage },
     { path:'/openings', component: OpeningsPage },

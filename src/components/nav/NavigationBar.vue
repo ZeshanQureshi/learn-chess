@@ -3,7 +3,7 @@
   <header class="top-bar">
       <div class="nav-logo">
         <router-link class="router-nav" to="/">
-            <img class="icon" v-bind:src="'/nav/nav-icon.png'">
+            <img class="icon" v-bind:src="'/learn-chess/nav/nav-icon.png'">
             <p class="logo">Learn Chess</p>
         </router-link>
       </div>

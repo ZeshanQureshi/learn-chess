@@ -14,9 +14,9 @@ cd dist
 
 git init
 git add -A
-git commit -m 'deploy'
+git commit -m 'CONFIG: Deploy webpage'
 
 # if you are deploying to https://<USERNAME>.github.io/<REPO>
-git push -f git@github.com:zeshanqureshi/learn-chess.git main:gh-pages
+git push -f git@github.com:zeshanqureshi/learn-chess.git master:gh-pages
 
 cd -
