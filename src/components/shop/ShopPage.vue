@@ -113,24 +113,24 @@ export default {
         cart: ['No Items'],
         total: 0,
         set1: [
-          {name: "Black Magnetic Plastic", price: 26, img:"bmp.png", cost:"$26.00", tags:"magnetic", status:"Add to Cart"},
+          {name: "Black Magnetic Plastic", price: 26, img:"blmp.png", cost:"$26.00", tags:"magnetic", status:"Add to Cart"},
           {name: "Red Non-Magnetic Wooden", price: 44, img:"rnw.png", cost:"$44.00", tags:"magnetic", status:"Add to Cart"},
           {name: "Blue Magnetic Wooden", price: 80, img:"bmw.png", cost:"$80.00", tags:"magnetic", status:"Add to Cart"}
         ],
         set2: [
-          {name: "Red Magnetic Plastic", price: 39, img:"bmp.png", cost:"$39.00", tags:"magnetic", status:"Add to Cart"},
-          {name: "Black Non-Magnetic Wooden", price: 28, img:"bmp.png", cost:"$28.00", tags:"magnetic", status:"Add to Cart"},
+          {name: "Red Magnetic Plastic", price: 39, img:"rmp.png", cost:"$39.00", tags:"magnetic", status:"Add to Cart"},
+          {name: "Black Non-Magnetic Wooden", price: 28, img:"blnw.png", cost:"$28.00", tags:"magnetic", status:"Add to Cart"},
           {name: "Blue Magnetic Plastic", price: 35, img:"bmp.png", cost:"$35.00", tags:"magnetic", status:"Add to Cart"}
         ],
         set3: [
-          {name: "Black Magnetic Wooden", price: 46, img:"bmp.png", cost:"$46.00", tags:"magnetic", status:"Add to Cart"},
-          {name: "Blue Non-Magnetic Plastic", price: 55, img:"bmp.png", cost:"$55.00", tags:"magnetic", status:"Add to Cart"},
-          {name: "Red Magnetic Wooden", price: 33, img:"bmp.png", cost:"$33.00", tags:"magnetic", status:"Add to Cart"}
+          {name: "Black Magnetic Wooden", price: 46, img:"blmw.png", cost:"$46.00", tags:"magnetic", status:"Add to Cart"},
+          {name: "Blue Non-Magnetic Plastic", price: 55, img:"bnp.png", cost:"$55.00", tags:"magnetic", status:"Add to Cart"},
+          {name: "Red Magnetic Wooden", price: 33, img:"rmw.png", cost:"$33.00", tags:"magnetic", status:"Add to Cart"}
         ],
         set4: [
-          {name: "Blue Non-Magnetic Wooden", price: 53, img:"bmp.png", cost:"$53.00", tags:"magnetic", status:"Add to Cart"},
-          {name: "Red Non-Magnetic Plastic", price: 38, img:"bmp.png", cost:"$38.00", tags:"magnetic", status:"Add to Cart"},
-          {name: "Black Non-Magnetic Plastic", price: 46, img:"bmp.png", cost:"$46.00", tags:"magnetic", status:"Add to Cart"}
+          {name: "Blue Non-Magnetic Wooden", price: 53, img:"bnw.png", cost:"$53.00", tags:"magnetic", status:"Add to Cart"},
+          {name: "Red Non-Magnetic Plastic", price: 38, img:"rnp.png", cost:"$38.00", tags:"magnetic", status:"Add to Cart"},
+          {name: "Black Non-Magnetic Plastic", price: 46, img:"blnp.png", cost:"$46.00", tags:"magnetic", status:"Add to Cart"}
         ],
       }
   },
@@ -215,7 +215,6 @@ label:hover {
   height: 100%;
   background-color: white;
   box-sizing: border-box;
-  overflow-y: scroll;
   overflow-x: hidden;
 }
  
