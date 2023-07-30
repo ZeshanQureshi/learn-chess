@@ -2,6 +2,8 @@
 ## Background
 Learn chess is a website dedicated to all things chess! It features lessons on openings, midgame, and endgame tactics. It also features a shop page to purchase chess sets.
 
+This website supports both desktop and mobile browsers.
+
 To view a live demo of the front-end elements of the website, click [here](https://zeshanqureshi.github.io/learn-chess/).
 
 ## Development
