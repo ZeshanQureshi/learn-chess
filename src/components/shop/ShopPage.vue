@@ -62,7 +62,7 @@
           <img class="shop-img" v-bind:src="'/shop/' + items.img">
           <p>{{ items.name }}</p>
           <p>{{ items.cost }}</p>
-          <button class="shop-add" @click="this.total += 1">{{ items.status }}</button>
+          <button class="shop-add" @click="addToCart(items)">{{ items.status }}</button>
         </div>
       </div>
       <div class="shop-row">
@@ -70,7 +70,7 @@
           <img class="shop-img" v-bind:src="'/shop/' + items.img">
           <p>{{ items.name }}</p>
           <p>{{ items.cost }}</p>
-          <button class="shop-add">Add to Cart</button>
+          <button class="shop-add" @click="addToCart(items)">{{ items.status }}</button>
         </div>
       </div>
       <div class="shop-row">
@@ -78,7 +78,7 @@
           <img class="shop-img" v-bind:src="'/shop/' + items.img">
           <p>{{ items.name }}</p>
           <p>{{ items.cost }}</p>
-          <button class="shop-add">Add to Cart</button>
+          <button class="shop-add" @click="addToCart(items)">{{ items.status }}</button>
         </div>
       </div>
       <div class="shop-row">
@@ -86,17 +86,17 @@
           <img class="shop-img" v-bind:src="'/shop/' + items.img">
           <p>{{ items.name }}</p>
           <p>{{ items.cost }}</p>
-          <button class="shop-add">Add to Cart</button>
+          <button class="shop-add" @click="addToCart(items)">{{ items.status }}</button>
         </div>
       </div>
     </div>
 
     <div  v-if="windowWidth > 1000" class="shop-bag">
       <h4>Shopping Cart</h4>
-      <div class="shop-cart">
-        <p class="shop-cart-text" v-for="item in cart">{{ item }}</p>
-        <p class="shop-cart-text">${{ formatNumber(total) }} CAD</p>
+      <div class="shop-cart" v-for="items in cart">
+        <p class="shop-cart-text">{{ items }}</p>
       </div>
+      <p class="shop-cart-num">${{ formatNumber(total) }} CAD</p>
       <div class="shop-button">
         <button>Checkout</button>
       </div>
@@ -111,7 +111,7 @@ export default {
   data () {
       return {
         windowWidth: window.innerWidth,
-        cart: ['No Items'],
+        cart: [],
         total: 0.00,
         set1: [
           {name: "Black Magnetic Plastic", price: 26, img:"blmp.png", cost:"$26.00", tags:"magnetic", status:"Add to Cart"},
@@ -135,15 +135,25 @@ export default {
         ],
       }
   },
-  watch: {
-    addItemToCart(nameItem, cost) {
-      this.total += cost;
-    }
-  },
   methods: {
-  formatNumber(num) {
+    formatNumber(num) {
       return parseFloat(num).toFixed(2)
     },
+    formatCart(cart) {
+      if (cart.length === 0) return "No items";
+      return cart
+    },
+    addToCart(item) {
+      if (this.cart.includes(item.name)) {
+        this.total -= item.price;
+        this.cart = this.cart.filter(function(e) { return e !== item.name })
+        item.status = 'Add to cart';
+      } else {
+        this.total += item.price;
+        this.cart.push(item.name)
+        item.status = 'Remove from cart';
+      }
+    }
   }
 }
 </script>
@@ -192,20 +202,20 @@ label:hover {
 
 .shop-sidebar {
   width: 200px;
-  border-right: 1px black solid;
+  position:fixed;
+  left:0;
   float: left;
 }
 
 .shop-bag {
   width: 200px;
-  border-right: 1px black solid;
+  position: fixed; 
+  right: 0;
   float: right;
 }
 
 .shop-center {
   width: 100%;
-  height: 100%;
-  display: flex;
 }
 
 .shop-refinement {
@@ -218,8 +228,7 @@ label:hover {
   width: calc(100% - 400px);
   height: 100%;
   background-color: white;
-  box-sizing: border-box;
-  overflow-x: hidden;
+  margin: 0 200px 0 200px;
 }
  
 .shop-item {
@@ -274,6 +283,12 @@ button:hover {
 
 .shop-cart-text {
   text-align: center;
+}
+
+.shop-cart-num {
+  text-align: center;
+  font-weight: bold;
+  font-size: 25px;
 }
 
 @media only screen and (max-width: 1000px) {
