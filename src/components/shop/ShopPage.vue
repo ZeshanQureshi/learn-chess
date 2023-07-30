@@ -166,6 +166,10 @@ h5 {
   user-select: none;
 }
 
+ul {
+  list-style: none;
+}
+
 input {
   margin-right: 3px;
 }
