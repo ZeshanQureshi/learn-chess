@@ -62,7 +62,7 @@
           <img class="shop-img" v-bind:src="'/shop/' + items.img">
           <p>{{ items.name }}</p>
           <p>{{ items.cost }}</p>
-          <button class="shop-add" @click="addItemToCart(items.name, items.price)">{{ items.status }}</button>
+          <button class="shop-add" @click="this.total += 1">{{ items.status }}</button>
         </div>
       </div>
       <div class="shop-row">
@@ -95,6 +95,7 @@
       <h4>Shopping Cart</h4>
       <div class="shop-cart">
         <p class="shop-cart-text" v-for="item in cart">{{ item }}</p>
+        <p class="shop-cart-text">${{ formatNumber(total) }} CAD</p>
       </div>
       <div class="shop-button">
         <button>Checkout</button>
@@ -111,7 +112,7 @@ export default {
       return {
         windowWidth: window.innerWidth,
         cart: ['No Items'],
-        total: 0,
+        total: 0.00,
         set1: [
           {name: "Black Magnetic Plastic", price: 26, img:"blmp.png", cost:"$26.00", tags:"magnetic", status:"Add to Cart"},
           {name: "Red Non-Magnetic Wooden", price: 44, img:"rnw.png", cost:"$44.00", tags:"magnetic", status:"Add to Cart"},
@@ -137,13 +138,12 @@ export default {
   watch: {
     addItemToCart(nameItem, cost) {
       this.total += cost;
-
-      if (this.cart.length == 1) {
-        this.cart.pop;
-      }
-
-      this.cart.push = [nameItem]; 
     }
+  },
+  methods: {
+  formatNumber(num) {
+      return parseFloat(num).toFixed(2)
+    },
   }
 }
 </script>
