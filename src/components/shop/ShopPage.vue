@@ -67,7 +67,7 @@
       </div>
     </div>
 
-    <div  v-if="windowWidth > 1000" class="shop-bag">
+    <div class="shop-bag">
       <h4>Shopping Cart</h4>
       <div class="shop-cart" v-for="items in cart">
         <p class="shop-cart-text">{{ items }}</p>
@@ -285,7 +285,22 @@ button:hover {
 }
 
 @media only screen and (max-width: 1000px) {
+.shop-sidebar {
+  width: 0px;
+  visibility: hidden;
+}
 
+.shop-content {
+  width: 100%;
+  margin: 0;
+}
+
+.shop-bag {
+  position: relative;
+  float: left;
+  width: 100%;
+  margin-bottom: 30px;
+}
 
 }
 
