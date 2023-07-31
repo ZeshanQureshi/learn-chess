@@ -50,7 +50,7 @@ ul {
 
 .midgame-center {
   width: 50%;
-  height: auto;
+  min-height: calc(100vh - 321px);
   padding-bottom: 20px;
 
   margin: 0 auto;
