@@ -4,58 +4,20 @@
   <div class="shop-center">
     <div v-if="windowWidth>1000" class="shop-sidebar">
       <h4>Refinements</h4>
-      <div class="shop-refinement">
-        <h5>Proportions</h5>
-        <ul>
-          <label><li><input type="checkbox" @click="checkProperty('p', 's')"/>Small</li></label>
-          <label><li><input type="checkbox" @click="checkProperty('p', 'm')"/>Medium</li></label>
-          <label><li><input type="checkbox" @click="checkProperty('p', 'l')"/>Large</li></label>
-        </ul>
-      </div>
-
-      <div class="shop-refinement">
-        <h5>Appearance</h5>
-        <ul>
-          <label><li><input type="checkbox" @click="checkProperty('a', 'r')"/>Red</li></label>
-          <label><li><input type="checkbox" @click="checkProperty('a', 'b')"/>Blue</li></label>
-          <label><li><input type="checkbox" @click="checkProperty('a', 'g')"/>Black</li></label>
-        </ul>
-      </div>
-
-      <div class="shop-refinement">
-        <h5>Movement</h5>
-        <ul>
-          <label><li><input type="checkbox" @click="checkProperty('m', 'm')"/>Magnetic</li></label>
-          <label><li><input type="checkbox" @click="checkProperty('m', 'n')"/>Non-Magnetic</li></label>
-        </ul>
-      </div>
-
-      <div class="shop-refinement">
-        <h5>Body</h5>
-        <ul>
-          <label><li><input type="checkbox" @click="checkProperty('b', 'w')"/>Wooden</li></label>
-          <label><li><input type="checkbox" @click="checkProperty('b', 'p')"/>Plastic</li></label>
-        </ul>
-      </div>
-
-      <div class="shop-refinement">
-        <h5>Collapsible</h5>
-        <ul>
-          <label><li><input type="checkbox" @click="checkProperty('c', 'f')"/>Folding</li></label>
-          <label><li><input type="checkbox" @click="checkProperty('c', 'n')"/>Non-Folding</li></label>
-        </ul>
-      </div>
-
-      <div class="shop-refinement">
-        <h5>Storage</h5>
-        <ul>
-          <label><li><input type="checkbox" @click="checkProperty('s', 'u')"/>Underboard</li></label>
-          <label><li><input type="checkbox" @click="checkProperty('s', 'b')"/>Bag</li></label>
-        </ul>
-      </div>
+      <div v-for="property in refinements">
+        <div class="shop-refinement">
+          <h5>{{ property.name }}</h5>
+          <ul v-for="tag in property.values">
+            <label>
+              <li>
+                <input type="checkbox" v-model='tag.value' @click="checkProperty(property.name, tag.key, tag.value)"/>{{ tag.name }}
+              </li>
+            </label>
+          </ul>
+        </div>
+      </div>    
     </div>
     
-
     <div class="shop-content">
       <div class="shop-row">
         <div class="shop-item" v-for="items in set">
@@ -90,6 +52,46 @@ export default {
         filter: [],
         cart: [],
         total: 0.00,
+        refinements: [
+          {name: 'Proportions', 
+           values: [
+              {name: "Small", key: 's', value: false},
+              {name: "Medium", key: 'm', value: false},
+              {name: "Large", key: 'l', value: false}
+            ]
+          },
+          {name: 'Appearance', 
+           values: [
+              {name: "Red", key: 'r', value: false},
+              {name: "Blue", key: 'b', value: false},
+              {name: "Black", key: 'g', value: false}
+            ]
+          },
+          {name: 'Movement', 
+           values: [
+              {name: "Magnetic", key: 'm', value: false},
+              {name: "Non-Magnetic", key: 'n', value: false}
+            ]
+          }, 
+          {name: 'Body', 
+           values: [
+              {name: "Wooden", key: 'w', value: false},
+              {name: "Plastic", key: 'p', value: false}
+            ]
+          }, 
+          {name: 'Collapsible', 
+           values: [
+              {name: "Folding", key: 'f', value: false},
+              {name: "Non-Folding", key: 'n', value: false}
+            ]
+          },
+          {name: 'Storage', 
+           values: [
+              {name: "Underbody", key: 'u', value: false},
+              {name: "Bag", key: 'b', value: false}
+            ]
+          } 
+        ],
         set: [
           {name: "Black Magnetic Plastic", price: 26, img:"blmp.png", status:"Add to Cart", p:'s', a:'g', m:'m', b:'p', c:'f', s:'u'},
           {name: "Red Non-Magnetic Wooden", price: 44, img:"rnw.png", status:"Add to Cart", p:'s', a:'r', m:'n', b:'w', c:'n', s:'u'},
@@ -99,7 +101,7 @@ export default {
           {name: "Blue Magnetic Plastic", price: 35, img:"bmp.png", status:"Add to Cart", p:'m', a:'b', m:'m', b:'p', c:'n', s:'u'},
           {name: "Black Magnetic Wooden", price: 46, img:"blmw.png", status:"Add to Cart", p:'m', a:'g', m:'m', b:'w', c:'f', s:'b'},
           {name: "Blue Non-Magnetic Plastic", price: 55, img:"bnp.png", status:"Add to Cart", p:'m', a:'b', m:'n', b:'p', c:'n', s:'b'},
-          {name: "Red Magnetic Wooden", price: 33, img:"rmw.png", status:"Add to Cart", p:'l', a:'r', m:'m', b:'w', c:'f', s:'u'},
+          {name: "Red Magnetic Wooden", price: 33, img:"rmw.png", status:"Add to Cart", p:'m', a:'r', m:'m', b:'w', c:'f', s:'u'},
           {name: "Blue Non-Magnetic Wooden", price: 53, img:"bnw.png", status:"Add to Cart", p:'l', a:'b', m:'n', b:'w', c:'n', s:'u'},
           {name: "Red Non-Magnetic Plastic", price: 38, img:"rnp.png", status:"Add to Cart", p:'l', a:'r', m:'n', b:'p', c:'f', s:'b'},
           {name: "Black Non-Magnetic Plastic", price: 46, img:"blnp.png", status:"Add to Cart", p:'l', a:'g', m:'n', b:'p', c:'n', s:'b'}
@@ -125,26 +127,54 @@ export default {
         item.status = 'Remove from cart';
       }
     },
-    checkProperty(property, value) {
-     switch(property) {
-      case 'p':
-
-        break;
-      case 'a':
-        // code block
-        break;
-      case 'm':
-        // code block
-        break;
-      case 'b':
-        // code block
-        break;
-      case 'c':
-        // code block
-        break;
-      case 's':
-        // code block
-        break;
+    checkProperty(property, value, check) {
+      switch(property) {
+        case 'Proportions':
+          if (!check) {
+              this.set.forEach((elem) => {
+                if (elem.p != value) {
+                  this.filter.push(elem)
+                  this.set = this.set.filter(function(e) { return e !== elem })
+                }
+              });
+            } else {
+              this.filter.forEach((elem) => {
+                if (elem.p != value) {
+                  this.set.push(elem)
+                  this.filter = this.filter.filter(function(e) { return e !== elem })
+                }
+              });
+            }
+            break;
+        case 'Appearance':
+        if (!check) {
+            this.set.forEach((elem) => {
+              if (elem.a != value) {
+                this.filter.push(elem)
+                this.set = this.set.filter(function(e) { return e !== elem })
+              }
+            });
+          } else {
+            this.filter.forEach((elem) => {
+              if (elem.a != value) {
+                this.set.push(elem)
+                this.filter = this.filter.filter(function(e) { return e !== elem })
+              }
+            });
+          }
+          break;
+        case 'm':
+          // code block
+          break;
+        case 'b':
+          // code block
+          break;
+        case 'c':
+          // code block
+          break;
+        case 's':
+          // code block
+          break;
      }
     }
   }
@@ -209,6 +239,7 @@ label:hover {
 
 .shop-center {
   width: 100%;
+  min-height: calc(100vh - 201px);
 }
 
 .shop-refinement {
