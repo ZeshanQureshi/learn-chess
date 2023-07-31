@@ -7,50 +7,50 @@
       <div class="shop-refinement">
         <h5>Proportions</h5>
         <ul>
-          <label><li><input type="checkbox" @click="checkProperty('Small')"/>Small</li></label>
-          <label><li><input type="checkbox" @click="checkProperty('Medium')"/>Medium</li></label>
-          <label><li><input type="checkbox" @click="checkProperty('Large')"/>Large</li></label>
+          <label><li><input type="checkbox" @click="checkProperty('p', 's')"/>Small</li></label>
+          <label><li><input type="checkbox" @click="checkProperty('p', 'm')"/>Medium</li></label>
+          <label><li><input type="checkbox" @click="checkProperty('p', 'l')"/>Large</li></label>
         </ul>
       </div>
 
       <div class="shop-refinement">
         <h5>Appearance</h5>
         <ul>
-          <label><li><input type="checkbox" @click="checkProperty('Red')"/>Red</li></label>
-          <label><li><input type="checkbox" @click="checkProperty('Blue')"/>Blue</li></label>
-          <label><li><input type="checkbox" @click="checkProperty('Black')"/>Black</li></label>
+          <label><li><input type="checkbox" @click="checkProperty('a', 'r')"/>Red</li></label>
+          <label><li><input type="checkbox" @click="checkProperty('a', 'b')"/>Blue</li></label>
+          <label><li><input type="checkbox" @click="checkProperty('a', 'g')"/>Black</li></label>
         </ul>
       </div>
 
       <div class="shop-refinement">
         <h5>Movement</h5>
         <ul>
-          <label><li><input type="checkbox"/>Magnetic</li></label>
-          <label><li><input type="checkbox"/>Non-Magnetic</li></label>
+          <label><li><input type="checkbox" @click="checkProperty('m', 'm')"/>Magnetic</li></label>
+          <label><li><input type="checkbox" @click="checkProperty('m', 'n')"/>Non-Magnetic</li></label>
         </ul>
       </div>
 
       <div class="shop-refinement">
         <h5>Body</h5>
         <ul>
-          <label><li><input type="checkbox"/>Wooden</li></label>
-          <label><li><input type="checkbox"/>Plastic</li></label>
+          <label><li><input type="checkbox" @click="checkProperty('b', 'w')"/>Wooden</li></label>
+          <label><li><input type="checkbox" @click="checkProperty('b', 'p')"/>Plastic</li></label>
         </ul>
       </div>
 
       <div class="shop-refinement">
         <h5>Collapsible</h5>
         <ul>
-          <label><li><input type="checkbox"/>Folding</li></label>
-          <label><li><input type="checkbox"/>Non-Folding</li></label>
+          <label><li><input type="checkbox" @click="checkProperty('c', 'f')"/>Folding</li></label>
+          <label><li><input type="checkbox" @click="checkProperty('c', 'n')"/>Non-Folding</li></label>
         </ul>
       </div>
 
       <div class="shop-refinement">
         <h5>Storage</h5>
         <ul>
-          <label><li><input type="checkbox"/>Underboard</li></label>
-          <label><li><input type="checkbox"/>Bag</li></label>
+          <label><li><input type="checkbox" @click="checkProperty('s', 'u')"/>Underboard</li></label>
+          <label><li><input type="checkbox" @click="checkProperty('s', 'b')"/>Bag</li></label>
         </ul>
       </div>
     </div>
@@ -87,12 +87,12 @@ export default {
   data () {
       return {
         windowWidth: window.innerWidth,
-        filter: ['Black Magnetic Plastic'],
+        filter: [],
         cart: [],
         total: 0.00,
         set: [
           {name: "Black Magnetic Plastic", price: 26, img:"blmp.png", status:"Add to Cart", p:'s', a:'g', m:'m', b:'p', c:'f', s:'u'},
-          {name: "Red Non-Magnetic Wooden", price: 44, img:"rnw.png", status:"Add to Cart", p:'s', a:'r', m:'n', b:'w', c:'n', s:'au'},
+          {name: "Red Non-Magnetic Wooden", price: 44, img:"rnw.png", status:"Add to Cart", p:'s', a:'r', m:'n', b:'w', c:'n', s:'u'},
           {name: "Blue Magnetic Wooden", price: 80, img:"bmw.png", status:"Add to Cart", p:'s', a:'b', m:'m', b:'w', c:'f', s:'b'},
           {name: "Red Magnetic Plastic", price: 39, img:"rmp.png", status:"Add to Cart", p:'m', a:'r', m:'m', b:'p', c:'n', s:'b'},
           {name: "Black Non-Magnetic Wooden", price: 28, img:"blnw.png", status:"Add to Cart", p:'m', a:'g', m:'n', b:'w', c:'f', s:'u'},
@@ -125,8 +125,27 @@ export default {
         item.status = 'Remove from cart';
       }
     },
-    checkProperty(prop) {
-      
+    checkProperty(property, value) {
+     switch(property) {
+      case 'p':
+
+        break;
+      case 'a':
+        // code block
+        break;
+      case 'm':
+        // code block
+        break;
+      case 'b':
+        // code block
+        break;
+      case 'c':
+        // code block
+        break;
+      case 's':
+        // code block
+        break;
+     }
     }
   }
 }
