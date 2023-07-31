@@ -5,20 +5,20 @@
     <div v-if="windowWidth>1000" class="shop-sidebar">
       <h4>Refinements</h4>
       <div class="shop-refinement">
-        <h5>Size</h5>
+        <h5>Proportions</h5>
         <ul>
-          <label><li><input type="checkbox"/>Small</li></label>
-          <label><li><input type="checkbox"/>Medium</li></label>
-          <label><li><input type="checkbox"/>Large</li></label>
+          <label><li><input type="checkbox" @click="checkProperty('Small')"/>Small</li></label>
+          <label><li><input type="checkbox" @click="checkProperty('Medium')"/>Medium</li></label>
+          <label><li><input type="checkbox" @click="checkProperty('Large')"/>Large</li></label>
         </ul>
       </div>
 
       <div class="shop-refinement">
-        <h5>Colour</h5>
+        <h5>Appearance</h5>
         <ul>
-          <label><li><input type="checkbox"/>Red</li></label>
-          <label><li><input type="checkbox"/>Blue</li></label>
-          <label><li><input type="checkbox"/>Black</li></label>
+          <label><li><input type="checkbox" @click="checkProperty('Red')"/>Red</li></label>
+          <label><li><input type="checkbox" @click="checkProperty('Blue')"/>Blue</li></label>
+          <label><li><input type="checkbox" @click="checkProperty('Black')"/>Black</li></label>
         </ul>
       </div>
 
@@ -31,7 +31,7 @@
       </div>
 
       <div class="shop-refinement">
-        <h5>Material</h5>
+        <h5>Body</h5>
         <ul>
           <label><li><input type="checkbox"/>Wooden</li></label>
           <label><li><input type="checkbox"/>Plastic</li></label>
@@ -39,7 +39,7 @@
       </div>
 
       <div class="shop-refinement">
-        <h5>Board</h5>
+        <h5>Collapsible</h5>
         <ul>
           <label><li><input type="checkbox"/>Folding</li></label>
           <label><li><input type="checkbox"/>Non-Folding</li></label>
@@ -50,7 +50,7 @@
         <h5>Storage</h5>
         <ul>
           <label><li><input type="checkbox"/>Underboard</li></label>
-          <label><li><input type="checkbox"/>None</li></label>
+          <label><li><input type="checkbox"/>Bag</li></label>
         </ul>
       </div>
     </div>
@@ -58,34 +58,10 @@
 
     <div class="shop-content">
       <div class="shop-row">
-        <div class="shop-item" v-for="items in set1">
+        <div class="shop-item" v-for="items in set">
           <img class="shop-img" v-bind:src="'/shop/' + items.img">
           <p>{{ items.name }}</p>
-          <p>{{ items.cost }}</p>
-          <button class="shop-add" @click="addToCart(items)">{{ items.status }}</button>
-        </div>
-      </div>
-      <div class="shop-row">
-        <div class="shop-item" v-for="items in set2">
-          <img class="shop-img" v-bind:src="'/shop/' + items.img">
-          <p>{{ items.name }}</p>
-          <p>{{ items.cost }}</p>
-          <button class="shop-add" @click="addToCart(items)">{{ items.status }}</button>
-        </div>
-      </div>
-      <div class="shop-row">
-        <div class="shop-item" v-for="items in set3">
-          <img class="shop-img" v-bind:src="'/shop/' + items.img">
-          <p>{{ items.name }}</p>
-          <p>{{ items.cost }}</p>
-          <button class="shop-add" @click="addToCart(items)">{{ items.status }}</button>
-        </div>
-      </div>
-      <div class="shop-row">
-        <div class="shop-item" v-for="items in set4">
-          <img class="shop-img" v-bind:src="'/shop/' + items.img">
-          <p>{{ items.name }}</p>
-          <p>{{ items.cost }}</p>
+          <p>${{ items.price }}.00 CAD</p>
           <button class="shop-add" @click="addToCart(items)">{{ items.status }}</button>
         </div>
       </div>
@@ -111,28 +87,23 @@ export default {
   data () {
       return {
         windowWidth: window.innerWidth,
+        filter: ['Black Magnetic Plastic'],
         cart: [],
         total: 0.00,
-        set1: [
-          {name: "Black Magnetic Plastic", price: 26, img:"blmp.png", cost:"$26.00", tags:"magnetic", status:"Add to Cart"},
-          {name: "Red Non-Magnetic Wooden", price: 44, img:"rnw.png", cost:"$44.00", tags:"magnetic", status:"Add to Cart"},
-          {name: "Blue Magnetic Wooden", price: 80, img:"bmw.png", cost:"$80.00", tags:"magnetic", status:"Add to Cart"}
-        ],
-        set2: [
-          {name: "Red Magnetic Plastic", price: 39, img:"rmp.png", cost:"$39.00", tags:"magnetic", status:"Add to Cart"},
-          {name: "Black Non-Magnetic Wooden", price: 28, img:"blnw.png", cost:"$28.00", tags:"magnetic", status:"Add to Cart"},
-          {name: "Blue Magnetic Plastic", price: 35, img:"bmp.png", cost:"$35.00", tags:"magnetic", status:"Add to Cart"}
-        ],
-        set3: [
-          {name: "Black Magnetic Wooden", price: 46, img:"blmw.png", cost:"$46.00", tags:"magnetic", status:"Add to Cart"},
-          {name: "Blue Non-Magnetic Plastic", price: 55, img:"bnp.png", cost:"$55.00", tags:"magnetic", status:"Add to Cart"},
-          {name: "Red Magnetic Wooden", price: 33, img:"rmw.png", cost:"$33.00", tags:"magnetic", status:"Add to Cart"}
-        ],
-        set4: [
-          {name: "Blue Non-Magnetic Wooden", price: 53, img:"bnw.png", cost:"$53.00", tags:"magnetic", status:"Add to Cart"},
-          {name: "Red Non-Magnetic Plastic", price: 38, img:"rnp.png", cost:"$38.00", tags:"magnetic", status:"Add to Cart"},
-          {name: "Black Non-Magnetic Plastic", price: 46, img:"blnp.png", cost:"$46.00", tags:"magnetic", status:"Add to Cart"}
-        ],
+        set: [
+          {name: "Black Magnetic Plastic", price: 26, img:"blmp.png", status:"Add to Cart", p:'s', a:'g', m:'m', b:'p', c:'f', s:'u'},
+          {name: "Red Non-Magnetic Wooden", price: 44, img:"rnw.png", status:"Add to Cart", p:'s', a:'r', m:'n', b:'w', c:'n', s:'au'},
+          {name: "Blue Magnetic Wooden", price: 80, img:"bmw.png", status:"Add to Cart", p:'s', a:'b', m:'m', b:'w', c:'f', s:'b'},
+          {name: "Red Magnetic Plastic", price: 39, img:"rmp.png", status:"Add to Cart", p:'m', a:'r', m:'m', b:'p', c:'n', s:'b'},
+          {name: "Black Non-Magnetic Wooden", price: 28, img:"blnw.png", status:"Add to Cart", p:'m', a:'g', m:'n', b:'w', c:'f', s:'u'},
+          {name: "Blue Magnetic Plastic", price: 35, img:"bmp.png", status:"Add to Cart", p:'m', a:'b', m:'m', b:'p', c:'n', s:'u'},
+          {name: "Black Magnetic Wooden", price: 46, img:"blmw.png", status:"Add to Cart", p:'m', a:'g', m:'m', b:'w', c:'f', s:'b'},
+          {name: "Blue Non-Magnetic Plastic", price: 55, img:"bnp.png", status:"Add to Cart", p:'m', a:'b', m:'n', b:'p', c:'n', s:'b'},
+          {name: "Red Magnetic Wooden", price: 33, img:"rmw.png", status:"Add to Cart", p:'l', a:'r', m:'m', b:'w', c:'f', s:'u'},
+          {name: "Blue Non-Magnetic Wooden", price: 53, img:"bnw.png", status:"Add to Cart", p:'l', a:'b', m:'n', b:'w', c:'n', s:'u'},
+          {name: "Red Non-Magnetic Plastic", price: 38, img:"rnp.png", status:"Add to Cart", p:'l', a:'r', m:'n', b:'p', c:'f', s:'b'},
+          {name: "Black Non-Magnetic Plastic", price: 46, img:"blnp.png", status:"Add to Cart", p:'l', a:'g', m:'n', b:'p', c:'n', s:'b'}
+        ]
       }
   },
   methods: {
@@ -153,6 +124,9 @@ export default {
         this.cart.push(item.name)
         item.status = 'Remove from cart';
       }
+    },
+    checkProperty(prop) {
+      
     }
   }
 }
