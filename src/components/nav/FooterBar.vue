@@ -58,7 +58,7 @@
         </div>
     </div>
   </footer>
-  <p class="footer-contact">Created By <a href="https://zeshanqureshi.ca/" target="_blank">Zeshan Qureshi</a></p>
+  <p class="footer-contact">Created By <a href="https://zeshanqureshi.info/" target="_blank">Zeshan Qureshi</a></p>
 </div>
 </template>
 
