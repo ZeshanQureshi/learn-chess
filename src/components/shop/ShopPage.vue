@@ -163,17 +163,73 @@ export default {
             });
           }
           break;
-        case 'm':
-          // code block
+        case 'Movement':
+        if (!check) {
+            this.set.forEach((elem) => {
+              if (elem.m != value) {
+                this.filter.push(elem)
+                this.set = this.set.filter(function(e) { return e !== elem })
+              }
+            });
+          } else {
+            this.filter.forEach((elem) => {
+              if (elem.m != value) {
+                this.set.push(elem)
+                this.filter = this.filter.filter(function(e) { return e !== elem })
+              }
+            });
+          }
           break;
-        case 'b':
-          // code block
+        case 'Body':
+        if (!check) {
+            this.set.forEach((elem) => {
+              if (elem.b != value) {
+                this.filter.push(elem)
+                this.set = this.set.filter(function(e) { return e !== elem })
+              }
+            });
+          } else {
+            this.filter.forEach((elem) => {
+              if (elem.b != value) {
+                this.set.push(elem)
+                this.filter = this.filter.filter(function(e) { return e !== elem })
+              }
+            });
+          }
           break;
-        case 'c':
-          // code block
+        case 'Collapsible':
+        if (!check) {
+            this.set.forEach((elem) => {
+              if (elem.c != value) {
+                this.filter.push(elem)
+                this.set = this.set.filter(function(e) { return e !== elem })
+              }
+            });
+          } else {
+            this.filter.forEach((elem) => {
+              if (elem.c != value) {
+                this.set.push(elem)
+                this.filter = this.filter.filter(function(e) { return e !== elem })
+              }
+            });
+          }
           break;
-        case 's':
-          // code block
+        case 'Storage':
+        if (!check) {
+            this.set.forEach((elem) => {
+              if (elem.s != value) {
+                this.filter.push(elem)
+                this.set = this.set.filter(function(e) { return e !== elem })
+              }
+            });
+          } else {
+            this.filter.forEach((elem) => {
+              if (elem.s != value) {
+                this.set.push(elem)
+                this.filter = this.filter.filter(function(e) { return e !== elem })
+              }
+            });
+          }
           break;
      }
     }
