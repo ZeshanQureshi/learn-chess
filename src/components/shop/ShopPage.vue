@@ -21,7 +21,7 @@
     <div class="shop-content">
       <div class="shop-row">
         <div class="shop-item" v-for="items in set">
-          <img class="shop-img" v-bind:src="'/shop/' + items.img">
+          <img class="shop-img" v-bind:src="'/learn-chess/shop/' + items.img">
           <p>{{ items.name }}</p>
           <p>${{ items.price }}.00 CAD</p>
           <button class="shop-add" @click="addToCart(items)">{{ items.status }}</button>
