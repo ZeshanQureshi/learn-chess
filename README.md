@@ -1,6 +1,6 @@
 # learn-chess
 ## Background
-Learn chess is a website dedicated to all things chess! It features lessons on openings, midgame, and endgame tactics. It also features a shop page to purchase chess sets.
+Learn Chess is a website dedicated to all things chess! It features lessons on openings, midgame, and endgame tactics. It also features a shop page to purchase chess sets.
 
 This website supports both desktop and mobile browsers.
 
@@ -43,7 +43,7 @@ A directory tree for all web pages can be found below:
     * Smothered Mate *
     * Anastasia's Mate *
   * Shop
-    * Checkout
+    * Checkout *
   * Account
     * Register
     * Sign In
@@ -51,3 +51,5 @@ A directory tree for all web pages can be found below:
     * Manage *
   
 __Note: Webpages marked with * can only be accessed when signed in__
+
+_Important: Since there is no back-end server in the demo, some features such as the account management and checkout page will not be accessible. Furthermore, the lack of server-side routing means some pages will return a 404 Error when refreshed._
