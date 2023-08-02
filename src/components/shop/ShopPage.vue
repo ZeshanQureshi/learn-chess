@@ -291,6 +291,7 @@ label:hover {
   position: fixed; 
   right: 0;
   float: right;
+  top: 50px;
 }
 
 .shop-center {
@@ -307,6 +308,7 @@ label:hover {
 .shop-content {
   width: calc(100% - 400px);
   height: 100%;
+  min-height: 502px;
   background-color: white;
   margin: 0 200px 0 200px;
 }
@@ -387,6 +389,7 @@ button:hover {
   float: left;
   width: 100%;
   margin-bottom: 30px;
+  top:auto;
 }
 
 }
